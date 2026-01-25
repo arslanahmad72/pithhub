@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import {
   ArrowRight,
   Phone,
@@ -24,12 +24,17 @@ const Container = ({ children }: { children: React.ReactNode }) => (
   <div className="mx-auto w-full max-w-7xl px-6">{children}</div>
 );
 
-const fadeUp = {
+// ✅ FIXED: typed Variants + valid ease array
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 18 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: "easeOut" } },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.55, ease: [0.16, 1, 0.3, 1] },
+  },
 };
 
-const stagger = {
+const stagger: Variants = {
   hidden: {},
   show: { transition: { staggerChildren: 0.08 } },
 };
@@ -55,10 +60,7 @@ export default function ContactPage() {
     );
   }, [form]);
 
-  function onChange(
-    key: keyof typeof form,
-    value: string
-  ) {
+  function onChange(key: keyof typeof form, value: string) {
     setForm((p) => ({ ...p, [key]: value }));
   }
 
@@ -100,10 +102,7 @@ export default function ContactPage() {
             </motion.h1>
 
             {/* Breadcrumb */}
-            <motion.div
-              variants={fadeUp}
-              className="mt-4 text-sm text-slate-500"
-            >
+            <motion.div variants={fadeUp} className="mt-4 text-sm text-slate-500">
               <Link href="/" className="hover:text-slate-700 transition">
                 Home
               </Link>
@@ -121,11 +120,15 @@ export default function ContactPage() {
               prepare a proposal. You don’t need to explain everything perfectly.
               <br />
               <span className="font-medium text-slate-800">
-                You just need to explain what feels broken. That’s enough to start.
+                You just need to explain what feels broken. That’s enough to
+                start.
               </span>
             </motion.p>
 
-            <motion.div variants={fadeUp} className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+            <motion.div
+              variants={fadeUp}
+              className="mt-10 flex flex-col sm:flex-row gap-4 justify-center"
+            >
               <a
                 href="#contact-form"
                 className="inline-flex items-center gap-2 rounded-full bg-brand-gradient px-10 py-4 font-semibold text-white shadow-[0_18px_60px_-45px_rgba(0,0,0,.45)] transition hover:opacity-90"
@@ -384,8 +387,8 @@ export default function ContactPage() {
                     Prefer a Faster Option?
                   </div>
                   <p className="mt-2 text-sm text-slate-600">
-                    If it’s easier, you can message us directly on WhatsApp or call
-                    during business hours.
+                    If it’s easier, you can message us directly on WhatsApp or
+                    call during business hours.
                   </p>
 
                   <div className="mt-4 space-y-3">
