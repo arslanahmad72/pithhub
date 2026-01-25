@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+/* ================================
+   GLOBAL THEME VARIABLES (SAFE)
+   ================================ */
+:root {
+  /* BRAND COLORS (SAFE HEX) */
+  --brand-primary: #ff6600;    /* orange */
+  --brand-secondary: #000000;  /* black */
+  --brand-accent: #f1965a;     /* soft orange */
+  --brand-orange:#ff6600;
+  /* UI */
+  --color-bg: #ffffff;
+  --color-surface: #f8fafc;
+  --color-text: #020617;
+  --color-muted: #475569;
+  --color-border: #e2e8f0;
+
+  /* TYPOGRAPHY */
+  --font-heading: var(--font-dm);
+  --font-body: var(--font-inter);
+}
+html {
+  scroll-behavior: smooth;
+}
+/* base */
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-heading);
+}
+
+/* ================================
+   BRAND HELPERS
+   ================================ */
+.bg-brand-gradient {
+  background: #ff6600;
+}
+.bg-white{
+  background: #fff;
+  color:#ff6600;
+
+}
+.text-brand-gradient {
+  background: linear-gradient(
+    90deg,
+    var(--brand-primary) 0%,
+    var(--brand-accent) 55%,
+    var(--brand-secondary) 120%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ================================
+   SOFT BLOBS (ORANGE + BLACK)
+   ================================ */
+.bg-soft-blobs {
+  background:
+    radial-gradient(900px 300px at 20% 0%, rgba(255, 102, 0, 0.18), transparent 60%),
+    radial-gradient(800px 260px at 80% 10%, rgba(241, 150, 90, 0.14), transparent 55%),
+    radial-gradient(650px 240px at 60% 80%, rgba(0, 0, 0, 0.08), transparent 55%);
+}
