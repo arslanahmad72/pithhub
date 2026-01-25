@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
 import Image from "next/image";
+import { motion, type Variants } from "framer-motion";
 import {
   ArrowRight,
   ShieldCheck,
@@ -17,16 +17,28 @@ import {
   AlertTriangle,
 } from "lucide-react";
 
+/**
+ * app/how-we-work/page.tsx (or component file)
+ * ONE FILE ONLY — full design + content.
+ */
+
 const Container = ({ children }: { children: React.ReactNode }) => (
   <div className="mx-auto w-full max-w-7xl px-6">{children}</div>
 );
 
-const fadeUp = {
+// ✅ use a valid easing (cubic-bezier array)
+const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
+
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 18 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: "easeOut" } },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.55, ease: EASE },
+  },
 };
 
-const stagger = {
+const stagger: Variants = {
   hidden: {},
   show: { transition: { staggerChildren: 0.08 } },
 };
@@ -53,18 +65,8 @@ const steps = [
     number: "2",
     icon: Spline,
     title: "System Design & Structure",
-    what: [
-      "Clear workflows",
-      "Defined responsibilities",
-      "Information flow",
-      "Rules and checkpoints",
-    ],
-    why: [
-      "Easier to use",
-      "Higher staff adoption",
-      "Simpler maintenance",
-      "Scaling becomes possible",
-    ],
+    what: ["Clear workflows", "Defined responsibilities", "Information flow", "Rules and checkpoints"],
+    why: ["Easier to use", "Higher staff adoption", "Simpler maintenance", "Scaling becomes possible"],
   },
   {
     number: "3",
@@ -76,12 +78,7 @@ const steps = [
       "Adjustments based on feedback",
       "You’re not handed something unfamiliar at the end",
     ],
-    why: [
-      "Less rework",
-      "Fewer surprises",
-      "Less misalignment",
-      "What you get is something you recognize",
-    ],
+    why: ["Less rework", "Fewer surprises", "Less misalignment", "What you get is something you recognize"],
   },
   {
     number: "4",
@@ -93,12 +90,7 @@ const steps = [
       "Ensure everyone understands how the system supports their work",
       "Practical training (not technical)",
     ],
-    why: [
-      "Systems fail when people don’t understand them",
-      "Ease of use",
-      "Clarity",
-      "Confidence",
-    ],
+    why: ["Systems fail when people don’t understand them", "Ease of use", "Clarity", "Confidence"],
   },
   {
     number: "5",
@@ -110,12 +102,7 @@ const steps = [
       "Improve systems as needs change",
       "Help the system grow with the business",
     ],
-    why: [
-      "Businesses change",
-      "Processes evolve",
-      "Pressure increases",
-      "Strong systems are not static",
-    ],
+    why: ["Businesses change", "Processes evolve", "Pressure increases", "Strong systems are not static"],
   },
 ];
 
@@ -143,123 +130,121 @@ const yourRole = [
 export default function HowWeWorkClient() {
   return (
     <main className="overflow-hidden">
+      {/* HERO */}
       <section className="relative overflow-hidden">
-  {/* Background gradient */}
-  <div
-    className="absolute inset-0"
-    style={{
-      background: `
-        radial-gradient(1200px 600px at 20% 20%, rgba(255,122,0,0.18), transparent 60%),
-        radial-gradient(900px 500px at 80% 80%, rgba(255,122,0,0.12), transparent 55%),
-        linear-gradient(180deg, #F7F7FB 0%, #FFFFFF 100%)
-      `,
-    }}
-  />
+        <div
+          className="absolute inset-0"
+          style={{
+            background: `
+              radial-gradient(1200px 600px at 20% 20%, rgba(255,122,0,0.18), transparent 60%),
+              radial-gradient(900px 500px at 80% 80%, rgba(255,122,0,0.12), transparent 55%),
+              linear-gradient(180deg, #F7F7FB 0%, #FFFFFF 100%)
+            `,
+          }}
+        />
 
-  {/* Content */}
-  <div className="relative max-w-7xl mx-auto px-6 pt-20 pb-24 text-center">
-    {/* ONE H1 */}
-    <h1 className="text-4xl md:text-6xl font-semibold tracking-tight text-slate-900">
-      How We Work
-    </h1>
+        <div className="relative max-w-7xl mx-auto px-6 pt-20 pb-24 text-center">
+          {/* ONE H1 */}
+          <h1 className="text-4xl md:text-6xl font-semibold tracking-tight text-slate-900">
+            How We Work
+          </h1>
 
-    {/* Breadcrumb */}
-    <div className="mt-4 text-sm text-slate-500">
-      <a href="/" className="hover:text-slate-700 transition">
-        Home
-      </a>
-      <span className="mx-2">›</span>
-      <span className="text-[var(--brand-orange)] font-medium">
-        How We Work
-      </span>
-    </div>
-  </div>
-
-  {/* Bottom wave */}
-  <svg
-    className="absolute bottom-0 left-0 w-full h-16 md:h-20"
-    viewBox="0 0 1440 120"
-    preserveAspectRatio="none"
-  >
-    <path
-      d="M0,40 C240,120 480,20 720,60 C960,100 1200,30 1440,70 L1440,120 L0,120 Z"
-      fill="#FFFFFF"
-    />
-  </svg>
-</section>
-<section className="relative bg-white py-20">
-      <Container>
-        <div className="grid items-center gap-12 md:grid-cols-2">
-          {/* LEFT — IMAGE */}
-          <motion.div
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55, ease: "easeOut" }}
-            className="relative"
-          >
-            <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-[0_18px_60px_-45px_rgba(0,0,0,.45)]">
-              <div className="relative aspect-[4/3] w-full">
-                <Image
-                  src="https://images.unsplash.com/photo-1552664730-d307ca884978"
-                  alt="Clear structured process for businesses"
-                  fill
-                  className="object-cover"
-                  priority
-                />
-              </div>
-            </div>
-
-            {/* subtle glow */}
-            <div className="pointer-events-none absolute -bottom-10 -left-10 h-40 w-40 rounded-full bg-orange-500/10 blur-3xl" />
-          </motion.div>
-
-          {/* RIGHT — CONTENT */}
-          <motion.div
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55, ease: "easeOut", delay: 0.05 }}
-          >
-            <h1 className="text-4xl font-semibold leading-tight text-slate-900 md:text-5xl">
-              No Confusion. No Guessing.
-              <br />
-              <span className="text-brand-gradient">
-                Just a Clear, Controlled Process.
-              </span>
-            </h1>
-
-            <p className="mt-6 text-lg text-slate-600">
-              Most business owners hesitate to start digital projects for one
-              reason: they’ve been burned before — vague timelines, unclear
-              costs, technical jargon, or systems that don’t actually work.
-            </p>
-
-            <p className="mt-4 text-slate-600">
-              Our process exists to remove that risk.
-            </p>
-
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 rounded-full bg-brand-gradient px-8 py-3 font-medium text-white shadow-sm transition hover:opacity-90"
-              >
-                Let’s Start With a Conversation <ArrowRight size={18} />
-              </Link>
-
-              <Link
-                href="/solutions"
-                className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-8 py-3 font-medium text-slate-900 shadow-sm"
-              >
-                Explore Solutions
-              </Link>
-            </div>
-
-            <p className="mt-4 text-sm text-slate-500">
-              Clarity comes before code.
-            </p>
-          </motion.div>
+          {/* Breadcrumb */}
+          <div className="mt-4 text-sm text-slate-500">
+            <Link href="/" className="hover:text-slate-700 transition">
+              Home
+            </Link>
+            <span className="mx-2">›</span>
+            <span className="text-[var(--brand-orange)] font-medium">
+              How We Work
+            </span>
+          </div>
         </div>
-      </Container>
-    </section>
+
+        {/* Bottom wave */}
+        <svg
+          className="absolute bottom-0 left-0 w-full h-16 md:h-20"
+          viewBox="0 0 1440 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M0,40 C240,120 480,20 720,60 C960,100 1200,30 1440,70 L1440,120 L0,120 Z"
+            fill="#FFFFFF"
+          />
+        </svg>
+      </section>
+
+      {/* INTRO SPLIT */}
+      <section className="relative bg-white py-20">
+        <Container>
+          <div className="grid items-center gap-12 md:grid-cols-2">
+            {/* LEFT — IMAGE */}
+            <motion.div
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.55, ease: EASE }}
+              className="relative"
+            >
+              <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-[0_18px_60px_-45px_rgba(0,0,0,.45)]">
+                <div className="relative aspect-[4/3] w-full">
+                  <Image
+                    src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80"
+                    alt="Clear structured process for businesses"
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                </div>
+              </div>
+
+              <div className="pointer-events-none absolute -bottom-10 -left-10 h-40 w-40 rounded-full bg-orange-500/10 blur-3xl" />
+            </motion.div>
+
+            {/* RIGHT — CONTENT */}
+            <motion.div
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.55, ease: EASE, delay: 0.05 }}
+            >
+              {/* IMPORTANT: this is a second H1 in your code before — changed to H2 */}
+              <h2 className="text-4xl font-semibold leading-tight text-slate-900 md:text-5xl">
+                No Confusion. No Guessing.
+                <br />
+                <span className="text-brand-gradient">
+                  Just a Clear, Controlled Process.
+                </span>
+              </h2>
+
+              <p className="mt-6 text-lg text-slate-600">
+                Most business owners hesitate to start digital projects for one
+                reason: they’ve been burned before — vague timelines, unclear
+                costs, technical jargon, or systems that don’t actually work.
+              </p>
+
+              <p className="mt-4 text-slate-600">Our process exists to remove that risk.</p>
+
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 rounded-full bg-brand-gradient px-8 py-3 font-medium text-white shadow-sm transition hover:opacity-90"
+                >
+                  Let’s Start With a Conversation <ArrowRight size={18} />
+                </Link>
+
+                <Link
+                  href="/solutions"
+                  className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-8 py-3 font-medium text-slate-900 shadow-sm"
+                >
+                  Explore Solutions
+                </Link>
+              </div>
+
+              <p className="mt-4 text-sm text-slate-500">Clarity comes before code.</p>
+            </motion.div>
+          </div>
+        </Container>
+      </section>
+
       {/* SECTION 1 — SETTING EXPECTATIONS */}
       <section className="py-16">
         <Container>
@@ -278,10 +263,7 @@ export default function HowWeWorkClient() {
               SETTING EXPECTATIONS
             </motion.div>
 
-            <motion.h2
-              variants={fadeUp}
-              className="mt-4 text-3xl font-semibold"
-            >
+            <motion.h2 variants={fadeUp} className="mt-4 text-3xl font-semibold">
               This Is Not a “Build It and Disappear” Engagement
             </motion.h2>
 
@@ -289,10 +271,7 @@ export default function HowWeWorkClient() {
               We don’t rush to write code. We don’t force solutions.
             </motion.p>
 
-            <motion.div
-              variants={fadeUp}
-              className="mt-8 grid gap-4 md:grid-cols-3"
-            >
+            <motion.div variants={fadeUp} className="mt-8 grid gap-4 md:grid-cols-3">
               <MiniCard
                 icon={Map}
                 title="Understand reality"
@@ -339,7 +318,7 @@ export default function HowWeWorkClient() {
         </Container>
       </section>
 
-      {/* SECTION 7 — WHAT THIS PROTECTS YOU FROM */}
+      {/* PREVENT */}
       <section className="border-y border-white/10 bg-slate-950 py-20 text-white">
         <Container>
           <motion.div
@@ -349,17 +328,11 @@ export default function HowWeWorkClient() {
             variants={stagger}
             className="mx-auto max-w-4xl text-center"
           >
-            <motion.h2
-              variants={fadeUp}
-              className="text-3xl font-semibold md:text-4xl"
-            >
+            <motion.h2 variants={fadeUp} className="text-3xl font-semibold md:text-4xl">
               This Process Is Designed to Prevent
             </motion.h2>
 
-            <motion.div
-              variants={fadeUp}
-              className="mt-10 grid gap-3 sm:grid-cols-2"
-            >
+            <motion.div variants={fadeUp} className="mt-10 grid gap-3 sm:grid-cols-2">
               {protections.map((p) => (
                 <div
                   key={p}
@@ -373,7 +346,7 @@ export default function HowWeWorkClient() {
         </Container>
       </section>
 
-      {/* SECTION 8 — TIMEFRAMES */}
+      {/* TIMEFRAMES */}
       <section className="py-20">
         <Container>
           <motion.div
@@ -391,10 +364,7 @@ export default function HowWeWorkClient() {
               TIMEFRAMES
             </motion.div>
 
-            <motion.h2
-              variants={fadeUp}
-              className="mt-4 text-3xl font-semibold"
-            >
+            <motion.h2 variants={fadeUp} className="mt-4 text-3xl font-semibold">
               Typical Ranges (Depending on Scope)
             </motion.h2>
 
@@ -402,21 +372,14 @@ export default function HowWeWorkClient() {
               We prioritize functionality and stability over speed.
             </motion.p>
 
-            <motion.div
-              variants={fadeUp}
-              className="mt-10 grid gap-6 md:grid-cols-3"
-            >
+            <motion.div variants={fadeUp} className="mt-10 grid gap-6 md:grid-cols-3">
               {timeframes.map((t) => (
                 <div
                   key={t.title}
                   className="rounded-3xl border border-slate-200 bg-white/70 p-7 backdrop-blur shadow-[0_18px_60px_-45px_rgba(0,0,0,.45)]"
                 >
-                  <div className="text-sm font-semibold text-slate-900">
-                    {t.title}
-                  </div>
-                  <div className="mt-2 text-2xl font-semibold text-orange-600">
-                    {t.desc}
-                  </div>
+                  <div className="text-sm font-semibold text-slate-900">{t.title}</div>
+                  <div className="mt-2 text-2xl font-semibold text-orange-600">{t.desc}</div>
                 </div>
               ))}
             </motion.div>
@@ -424,7 +387,7 @@ export default function HowWeWorkClient() {
         </Container>
       </section>
 
-      {/* SECTION 9 — YOUR ROLE */}
+      {/* YOUR ROLE */}
       <section className="py-20">
         <Container>
           <motion.div
@@ -442,10 +405,7 @@ export default function HowWeWorkClient() {
               YOUR ROLE
             </motion.div>
 
-            <motion.h2
-              variants={fadeUp}
-              className="mt-4 text-3xl font-semibold"
-            >
+            <motion.h2 variants={fadeUp} className="mt-4 text-3xl font-semibold">
               What We Need From You
             </motion.h2>
 
@@ -466,24 +426,21 @@ export default function HowWeWorkClient() {
         </Container>
       </section>
 
-      {/* FINAL CTA — WHITE BG + BLACK TEXT + ROUND FULL BRAND BUTTON */}
+      {/* FINAL CTA */}
       <section className="relative overflow-hidden bg-white py-20">
         <Container>
           <motion.div
             initial={{ opacity: 0, y: 18 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.55, ease: "easeOut" }}
+            transition={{ duration: 0.55, ease: EASE }}
             className="mx-auto max-w-3xl text-center"
           >
             <h2 className="text-3xl font-semibold text-slate-900 md:text-4xl">
-              If You Want Structure Without Stress, This Is the Right Starting
-              Point
+              If You Want Structure Without Stress, This Is the Right Starting Point
             </h2>
 
-            <p className="mt-6 text-slate-600">
-              Good systems don’t add pressure. They remove it.
-            </p>
+            <p className="mt-6 text-slate-600">Good systems don’t add pressure. They remove it.</p>
 
             <Link
               href="/contact"
@@ -529,9 +486,7 @@ function StepCard({
             <div className="text-xs font-semibold tracking-wide text-slate-500">
               STEP {step.number}
             </div>
-            <h3 className="mt-1 text-xl font-semibold text-slate-900">
-              {step.title}
-            </h3>
+            <h3 className="mt-1 text-xl font-semibold text-slate-900">{step.title}</h3>
           </div>
         </div>
 
@@ -542,9 +497,7 @@ function StepCard({
 
       <div className="mt-8 grid gap-6 md:grid-cols-2">
         <div>
-          <div className="text-sm font-semibold text-slate-900">
-            What Happens Here
-          </div>
+          <div className="text-sm font-semibold text-slate-900">What Happens Here</div>
           <ul className="mt-3 space-y-2 text-slate-600">
             {step.what.map((x) => (
               <li key={x} className="flex gap-3">
@@ -556,9 +509,7 @@ function StepCard({
         </div>
 
         <div>
-          <div className="text-sm font-semibold text-slate-900">
-            Why This Matters
-          </div>
+          <div className="text-sm font-semibold text-slate-900">Why This Matters</div>
           <ul className="mt-3 space-y-2 text-slate-600">
             {step.why.map((x) => (
               <li key={x} className="flex gap-3">
