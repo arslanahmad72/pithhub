@@ -2,8 +2,18 @@
 
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
-import { ChevronDown, ArrowRight, CheckCircle2 } from "lucide-react";
 import { useMemo, useState } from "react";
+import {
+  Wrench,
+  TrendingUp,
+  MessageSquare,
+  Package,
+  DollarSign,
+  Eye,
+  Link2,
+  ShieldCheck,
+  ChevronDown, ArrowRight, CheckCircle2
+} from "lucide-react";
 
 type Area = {
   id: string;
@@ -17,6 +27,9 @@ type Area = {
   changeTitle: string;
   changes: string[];
 };
+function Container({ children }: { children: React.ReactNode }) {
+  return <div className="max-w-7xl mx-auto px-6">{children}</div>;
+}
 
 const AREAS: Area[] = [
   {
@@ -229,141 +242,128 @@ export default function SolutionsPage() {
 </section>
 
  {/* SECTION 2 — Image + Intro + 2 feature cards (Digipro style) */}
-<section className="bg-white">
-  <div className="max-w-7xl mx-auto px-6 py-14 md:py-20">
-    <div className="grid gap-10 lg:grid-cols-2 items-center">
-      {/* Left image */}
-      <div className="relative">
-        <div className="absolute -inset-4 rounded-[2.5rem] blur-2xl opacity-30"
-             style={{ background: "radial-gradient(circle at 30% 30%, rgba(255,122,0,0.35), transparent 60%)" }} />
-        <div className="relative overflow-hidden rounded-[2.5rem] border border-slate-200 bg-slate-100 shadow-sm">
-          {/* Replace with your image */}
-          <img
-            src="https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1400&q=80"
-            alt="Team working on business systems"
-            className="h-[420px] w-full object-cover"
-            loading="lazy"
-          />
+ <section className="bg-white">
+  <Container>
+    <div className="py-14 md:py-20 grid lg:grid-cols-2 gap-12 items-center">
+      
+      {/* LEFT CONTENT */}
+      <div>
+        {/* Pill */}
+        <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-1 text-xs font-medium text-slate-600">
+          ⭐ Business-first solutions
         </div>
-      </div>
 
-      {/* Right content */}
-      <div className="lg:pl-6">
-        <div className="flex items-center gap-2">
-          <span className="text-xs font-semibold tracking-[0.22em] uppercase text-slate-500">
-            💡 Our Solutions
+        <h2 className="mt-6 text-4xl md:text-5xl font-semibold tracking-tight leading-[1.05] text-slate-950">
+          You don’t need more software -
+          <span className="font-serif italic text-slate-700">
+            you need fewer problems.
           </span>
-          <span className="h-px flex-1 bg-slate-200" />
-        </div>
-
-        <h2 className="mt-5 text-4xl md:text-4xl font-semibold tracking-tight leading-[1.05] text-slate-900">
-          You Don’t Need More Software —
-          <br />
-          <span className="font-serif italic">You Need Fewer Problems</span>
         </h2>
 
-        <p className="mt-5 text-slate-600 leading-relaxed max-w-xl">
-          Most businesses don’t wake up looking for “digital solutions”. They wake up dealing with confusion,
-          delays, repetition, firefighting, and pressure to grow without things falling apart.
+        <p className="mt-5 text-slate-700 leading-relaxed max-w-xl">
+          Most businesses don’t wake up looking for “digital solutions.”
+          They wake up dealing with confusion, delays, repetition,
+          firefighting, and pressure to grow without things falling apart.
         </p>
 
-        {/* Two feature cards */}
-        <div className="mt-8 grid gap-5 sm:grid-cols-2">
-          <div
-            className="rounded-3xl border bg-white p-6 shadow-sm"
-            style={{ borderColor: "rgba(255,122,0,0.35)" }}
-          >
-            <div className="flex items-start gap-3">
-              <div
-                className="h-10 w-10 rounded-2xl flex items-center justify-center border"
-                style={{
-                  borderColor: "rgba(255,122,0,0.35)",
-                  background: "rgba(255,122,0,0.10)",
-                }}
-              >
-                <span className="text-slate-900">🧩</span>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold text-slate-900">Systems that remove chaos</h3>
-                <p className="mt-2 text-sm text-slate-600 leading-relaxed">
-                  Clear workflows, ownership, and tracking — so operations don’t depend on memory or micromanagement.
-                </p>
-              </div>
-            </div>
-          </div>
+        <p className="mt-4 text-slate-600 leading-relaxed max-w-xl">
+          This page isn’t about tools. It’s about fixing what’s breaking down
+          inside your business.
+        </p>
 
-          <div
-            className="rounded-3xl border bg-white p-6 shadow-sm"
-            style={{ borderColor: "rgba(255,122,0,0.35)" }}
+        {/* CTA */}
+        <div className="mt-8 flex flex-col sm:flex-row gap-3">
+          <Link
+            href="/solutions"
+            className="inline-flex items-center justify-center rounded-full bg-brand-gradient text-white px-6 py-3 text-sm font-medium shadow-sm hover:opacity-95 transition"
           >
-            <div className="flex items-start gap-3">
-              <div
-                className="h-10 w-10 rounded-2xl flex items-center justify-center border"
-                style={{
-                  borderColor: "rgba(255,122,0,0.35)",
-                  background: "rgba(255,122,0,0.10)",
-                }}
-              >
-                <span className="text-slate-900">📈</span>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold text-slate-900">Visibility you can trust</h3>
-                <p className="mt-2 text-sm text-slate-600 leading-relaxed">
-                  One clear view of what’s happening — sales, operations, customers, and cash — without chasing updates.
-                </p>
-              </div>
-            </div>
-          </div>
+            Find the problem that sounds like you →
+          </Link>
+
+          <Link
+            href="/contact"
+            className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-6 py-3 text-sm font-medium hover:bg-slate-50 transition"
+          >
+            Talk to Us
+          </Link>
         </div>
 
-        {/* Support row */}
-        <div className="mt-8 flex items-center gap-4">
-          <div
-            className="h-12 w-12 rounded-2xl flex items-center justify-center border"
-            style={{
-              borderColor: "rgba(255,122,0,0.35)",
-              background: "rgba(255,122,0,0.10)",
-            }}
-          >
-            <span className="text-lg">📞</span>
+        {/* TAGS */}
+       {/* TAGS WITH ICONS */}
+<div className="mt-6 flex flex-wrap gap-2">
+  {[
+    { label: "Operations", icon: Wrench },
+    { label: "Sales", icon: TrendingUp },
+    { label: "Customer Service", icon: MessageSquare },
+    { label: "Inventory", icon: Package },
+    { label: "Cashflow", icon: DollarSign },
+    { label: "Visibility", icon: Eye },
+    { label: "Integration", icon: Link2 },
+    { label: "Protection", icon: ShieldCheck },
+  ].map(({ label, icon: Icon }) => (
+    <span
+      key={label}
+      className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-1.5 text-xs text-slate-700 shadow-sm"
+    >
+      <Icon className="h-4 w-4 text-orange-500" />
+      {label}
+    </span>
+  ))}
+</div>
+
+      </div>
+
+      {/* RIGHT DASHBOARD CARD */}
+      <div className="relative">
+        <div className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-[0_25px_80px_-55px_rgba(0,0,0,.45)]">
+          
+          {/* Header */}
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="text-sm font-semibold text-slate-900">
+                What owners actually want
+              </p>
+              <p className="text-xs text-slate-500">
+                Calm control • clear status • fewer surprises
+              </p>
+            </div>
+            <span className="rounded-full bg-orange-50 px-3 py-1 text-xs font-medium text-orange-600">
+              Jamaica
+            </span>
           </div>
-          <div>
-            <p className="font-semibold text-slate-900">Talk to a real person</p>
-            <p className="text-sm text-slate-600">
-              Call us:&nbsp;
-              <a
-                href="tel:+18765356390"
-                className="font-medium"
-                style={{ color: "var(--brand-orange)" }}
+
+          {/* Cards */}
+          <div className="mt-6 grid sm:grid-cols-2 gap-4">
+            {[
+              { title: "Consistency", desc: "Same process, every time." },
+              { title: "Accountability", desc: "Clear ownership + logs." },
+              { title: "Visibility", desc: "One view of reality." },
+              { title: "Protection", desc: "Access + backups built in." },
+            ].map((item) => (
+              <div
+                key={item.title}
+                className="rounded-2xl border border-slate-200 bg-white p-4"
               >
-                +1 876 535 6390
-              </a>
+                <p className="font-medium text-slate-900">{item.title}</p>
+                <p className="mt-1 text-sm text-slate-600">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Result */}
+          <div className="mt-5 rounded-2xl border border-slate-200 bg-slate-50 p-4">
+            <p className="text-sm font-medium text-slate-900">The result</p>
+            <p className="mt-1 text-sm text-slate-600">
+              Your business runs on structure — not on memory, WhatsApp
+              threads, or you being everywhere.
             </p>
           </div>
         </div>
-
-        {/* Optional CTA row (matches your style) */}
-        <div className="mt-8 flex flex-col sm:flex-row gap-3">
-          <Link
-            href="/contact"
-            className="inline-flex items-center justify-center rounded-2xl px-6 py-3 text-sm font-medium text-black"
-            style={{ background: "var(--brand-orange)" }}
-          >
-            Let’s Identify What’s Breaking Down
-            <ArrowRight className="ml-2 h-4 w-4" />
-          </Link>
-
-          <Link
-            href="/how-we-work"
-            className="sm:inline-flex items-center justify-center rounded-full bg-brand-gradient text-white px-5 py-2.5 text-sm font-medium shadow-sm hover:opacity-95 transition"
-          >
-            How we work
-          </Link>
-        </div>
       </div>
     </div>
-  </div>
+  </Container>
 </section>
+
 
 
       {/* HOW TO READ THIS PAGE */}
@@ -388,6 +388,7 @@ export default function SolutionsPage() {
         Each section below represents a real operational breakdown we see in Jamaican businesses.
         Pick the one that sounds like you — and we’ll design the system to fix it.
       </p>
+      
     </div>
 
     {/* Cards */}
@@ -503,6 +504,28 @@ export default function SolutionsPage() {
             Click the problem that feels familiar. You’ll see what it looks like day-to-day, what we fix,
             and what changes once the system is in place.
           </p>
+          {/* TAGS WITH ICONS */}
+<div className="mt-6 flex flex-wrap gap-4">
+  {[
+    { label: "Operations", icon: Wrench },
+    { label: "Sales", icon: TrendingUp },
+    { label: "Customer Service", icon: MessageSquare },
+    { label: "Inventory", icon: Package },
+    { label: "Cashflow", icon: DollarSign },
+    { label: "Visibility", icon: Eye },
+    { label: "Integration", icon: Link2 },
+    { label: "Protection", icon: ShieldCheck },
+  ].map(({ label, icon: Icon }) => (
+    <span
+      key={label}
+      className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-1.5 text-xs text-slate-700 shadow-sm"
+    >
+      <Icon className="h-4 w-4 text-orange-500" />
+      {label}
+    </span>
+  ))}
+</div>
+
         </div>
 
         {(() => {
@@ -561,8 +584,41 @@ export default function SolutionsPage() {
               changes: ["Customers feel informed", "Fewer complaints", "Staff are aligned", "Problems are caught earlier"],
             },
             {
-              id: "inventory-ordering",
+              id: "cybersecurity-risk",
               num: "04",
+              title: "Cybersecurity & Data Exposure Risk",
+              tagline: "Everything works — until one mistake costs you trust.",
+              feelTitle: "What This Feels Like Day-to-Day",
+              feel: [
+                "Passwords are shared or reused across staff",
+                "WhatsApp, email, and devices hold sensitive customer data",
+                "No clear rules for access, downloads, or data handling",
+                "You assume “nothing bad will happen” — until it does",
+                "If a staff member leaves, you’re unsure what access they still have",
+                "You wouldn’t know where the leak came from if something went wrong",
+              ],
+              note: "This doesn’t feel like a problem… until it suddenly is.",
+              fixIntro: "We design practical security and data-control systems that define:",
+              fix: [
+                "Who can access what (and who cannot)",
+                "How customer, payment, and internal data is handled",
+                "What happens when staff join, change roles, or leave",
+                "How systems log actions and changes",
+                "Where responsibility sits if something goes wrong",
+                "No paranoia. No tech overload. Just control.",
+              ],
+              changes: [
+                "Access is intentional, not accidental",
+                "Data is protected by process, not trust alone",
+                "Fewer internal risks",
+                "Clear accountability",
+                "Business continuity even if people change",
+                "You stop hoping nothing happens — and start knowing you’re protected.",
+              ],
+            },  
+            {
+              id: "inventory-ordering",
+              num: "05",
               title: "Inventory, Ordering & Resource Confusion",
               tagline: "Stock feels like guesswork.",
               feelTitle: "What This Feels Like",
@@ -580,7 +636,7 @@ export default function SolutionsPage() {
             },
             {
               id: "billing-cashflow",
-              num: "05",
+              num: "06",
               title: "Billing, Invoicing & Cash Flow Blind Spots",
               tagline: "You’re unsure who owes what.",
               feelTitle: "What This Feels Like",
@@ -597,7 +653,7 @@ export default function SolutionsPage() {
             },
             {
               id: "owner-visibility",
-              num: "06",
+              num: "07",
               title: "Owner & Management Visibility",
               tagline: "Managing blind.",
               feelTitle: "What This Feels Like",
@@ -614,7 +670,7 @@ export default function SolutionsPage() {
             },
             {
               id: "disconnected-systems",
-              num: "07",
+              num: "08",
               title: "Disconnected Systems",
               tagline: "Everything works — but not together.",
               feelTitle: "What This Feels Like",
@@ -629,6 +685,7 @@ export default function SolutionsPage() {
               fix: ["Website", "Sales", "Operations", "Customer service", "Finance"],
               changes: ["Less duplication", "Fewer errors", "Faster processes", "One source of truth"],
             },
+                      
           ];
 
           // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -709,22 +766,7 @@ export default function SolutionsPage() {
                         </button>
                       );
                     })}
-                     <div className="mt-7 flex flex-col sm:flex-row gap-3">
-                    <Link
-                      href="/contact"
-                      className="inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-medium text-white"
-                      style={{ background: "var(--brand-orange)" }}
-                    >
-                     Contact Us
-                    </Link>
-
-                    <Link
-                      href="/how-we-work"
-                      className="sm:inline-flex items-center justify-center rounded-full bg-brand-gradient text-white px-5 py-2.5 text-sm font-medium shadow-sm hover:opacity-95 transition"
-                    >
-                      How we work
-                    </Link>
-                  </div>
+                     
                   </div>
                 </div>
 
@@ -792,9 +834,39 @@ export default function SolutionsPage() {
 
                  
 
-                  <p className="mt-3 text-xs text-slate-500">
-                    One conversation can remove months of frustration.
-                  </p>
+                  {/* SAFE NEXT STEP CTA */}
+<div className="mt-6 rounded-2xl border border-slate-200 bg-slate-50 p-5">
+  <p className="text-sm font-semibold text-slate-900">
+    A safe next step
+  </p>
+
+  <p className="mt-2 text-sm text-slate-600 leading-relaxed">
+    If this describes your business, we can identify the simplest first fix
+    and what to do next.
+  </p>
+
+  <div className="mt-4 grid gap-3">
+    <Link
+      href="/contact"
+      className="inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-medium text-white"
+      style={{ background: "var(--brand-orange)" }}
+    >
+      Talk to Us →
+    </Link>
+
+    <Link
+      href="/how-we-work"
+      className="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-medium text-slate-900 hover:bg-slate-100 transition"
+    >
+      How we work
+    </Link>
+  </div>
+
+  <p className="mt-4 text-xs text-slate-500">
+    Calm, business-first. No tech jargon.
+  </p>
+</div>
+
                 </motion.div>
               </div>
 
@@ -879,7 +951,7 @@ export default function SolutionsPage() {
       <div className="h-44 w-56 rounded-3xl overflow-hidden border border-white/10 bg-white/5 shadow-2xl">
         <img
           src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80"
-          alt=""
+          alt="Structure Solution"
           className="h-full w-full object-cover opacity-90"
           loading="lazy"
         />
@@ -890,7 +962,7 @@ export default function SolutionsPage() {
       <div className="h-52 w-60 rounded-3xl overflow-hidden border border-white/10 bg-white/5 shadow-2xl">
         <img
           src="https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=900&q=80"
-          alt=""
+          alt="Predictability solution"
           className="h-full w-full object-cover opacity-90"
           loading="lazy"
         />

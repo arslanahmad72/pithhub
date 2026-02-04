@@ -64,103 +64,142 @@ export default function IndustriesPage() {
   </svg>
 </section>
       {/* HERO */}
-      <section className="py-20">
-      <Container>
-        <div className="grid items-center gap-10 md:grid-cols-2">
-          {/* LEFT: IMAGE */}
-          <motion.div
-            initial={{ opacity: 0, y: 18 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.55, ease: "easeOut" }}
-            className="relative"
-          >
-            <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-white/60 shadow-[0_18px_60px_-45px_rgba(0,0,0,.45)] backdrop-blur">
-              {/* Replace src with your real image */}
-              <div className="relative aspect-[4/3] w-full">
-                <Image
-                  src="/images/industries-systems.jpg"
-                  alt="Systems built around how your business actually runs"
-                  fill
-                  className="object-cover"
-                  priority={false}
-                />
-              </div>
-            </div>
-
-            {/* soft blob glow */}
-            <div className="pointer-events-none absolute -bottom-8 -left-10 h-40 w-40 rounded-full bg-orange-500/15 blur-3xl" />
-            <div className="pointer-events-none absolute -top-10 -right-10 h-52 w-52 rounded-full bg-orange-500/10 blur-3xl" />
-          </motion.div>
-
-          {/* RIGHT: CONTENT */}
-          <motion.div
-            initial={{ opacity: 0, y: 18 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.55, ease: "easeOut", delay: 0.05 }}
-          >
-            {/* label */}
-            <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/70 px-4 py-2 text-xs font-semibold tracking-wide text-orange-600 backdrop-blur">
-              <span className="inline-block h-2 w-2 rounded-full bg-orange-500" />
-              HOW THIS HELPS
-            </div>
-
-            {/* heading */}
-            <h2 className="mt-4 text-3xl font-semibold leading-tight md:text-4xl">
-              Systems that fit your industry —
-              <br />
-              <span className="font-serif italic text-slate-900">
-                not the other way around.
-              </span>
-            </h2>
-
-            <p className="mt-5 text-slate-600">
-              Different industries have different workflows — but the pressure
-              is the same when things grow: more staff, more customers, more
-              moving parts.
-            </p>
-
-            <p className="mt-4 text-slate-600">
-              We build clarity into the day-to-day so owners can see what’s
-              happening, spot issues early, and run without constant chasing.
-            </p>
-
-            {/* bullets */}
-            <ul className="mt-6 space-y-3 text-slate-700">
-              {[
-                "Make work visible (not stuck in WhatsApp, calls, or memory)",
-                "Reduce errors, surprises, and owner dependence",
-                "Track the flow: jobs → tasks → status → outcomes",
-                "Simple dashboards so decisions are fast and confident",
-              ].map((item) => (
-                <li key={item} className="flex gap-3">
-                  <CheckCircle2 className="mt-0.5 h-5 w-5 text-orange-600" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-
-            {/* buttons */}
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-gradient px-6 py-3 font-medium text-white shadow-sm"
-              >
-                Let’s Talk About Your Business <ArrowRight size={18} />
-              </Link>
-
-              <Link
-                href="/solutions"
-                className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white/70 px-6 py-3 font-medium text-slate-900 backdrop-blur"
-              >
-                Explore Solutions
-              </Link>
-            </div>
-          </motion.div>
+      <section className="py-16 md:py-20 bg-white">
+  <Container>
+    <div className="grid gap-10 lg:grid-cols-2 items-start">
+      {/* LEFT */}
+      <div className="pt-2">
+        {/* top pill */}
+        <div className="inline-flex items-center gap-2 rounded-full border border-orange-200 bg-orange-50 px-4 py-2 text-xs font-semibold tracking-wide text-slate-900">
+          <span className="inline-flex h-5 w-5 items-center justify-center rounded-full border border-orange-200 bg-white">
+            ✦
+          </span>
+          INDUSTRIES
         </div>
-      </Container>
-    </section>
+
+        <h1 className="mt-6 text-4xl md:text-4xl font-semibold tracking-tight leading-[1.05] text-slate-950">
+          Different Industries.
+          <br />
+          Same Pressure.
+          <br />
+          Same Need for Better Systems.
+        </h1>
+
+        <p className="mt-6 text-base md:text-lg text-slate-700 leading-relaxed max-w-xl">
+          No two businesses operate exactly the same — but the challenges business owners
+          face are remarkably similar.
+        </p>
+
+        <p className="mt-5 text-base md:text-lg text-slate-700 leading-relaxed max-w-xl">
+          As companies grow, complexity increases:
+        </p>
+
+        {/* bullets */}
+        <ul className="mt-4 space-y-3 max-w-xl">
+          {["More customers", "More staff", "More moving parts", "More risk"].map((t) => (
+            <li key={t} className="flex items-start gap-3 text-slate-700">
+              <span
+                className="mt-2 h-2.5 w-2.5 rounded-full"
+                style={{ background: "var(--brand-orange)" }}
+              />
+              <span className="text-base md:text-lg">{t}</span>
+            </li>
+          ))}
+        </ul>
+
+        <p className="mt-6 text-base md:text-lg text-slate-700 leading-relaxed max-w-xl">
+          We adapt systems to your industry reality —{" "}
+          <span className="font-semibold text-slate-950">not the other way around.</span>
+        </p>
+
+        {/* buttons */}
+        <div className="mt-10 flex flex-col sm:flex-row gap-4">
+          <Link
+            href="/contact"
+            className="inline-flex items-center justify-center rounded-full px-8 py-3 text-sm font-semibold text-black shadow-sm"
+            style={{ background: "var(--brand-orange)" }}
+          >
+            Start the Conversation
+          </Link>
+
+          <Link
+            href="/solutions"
+            className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-8 py-3 text-sm font-semibold text-slate-900 hover:bg-slate-50 transition"
+          >
+            Explore Solutions
+          </Link>
+        </div>
+      </div>
+
+      {/* RIGHT (IMPORTANT CONTEXT) */}
+      <div className="rounded-[34px] border border-slate-200 bg-white shadow-[0_20px_60px_-40px_rgba(15,23,42,.22)] p-7 md:p-8">
+        <p className="text-xs font-semibold tracking-[0.32em] uppercase text-slate-500">
+          IMPORTANT CONTEXT
+        </p>
+
+        <h3 className="mt-4 text-2xl md:text-3xl font-semibold tracking-tight text-slate-950">
+          We Don’t Force Your Business Into a Template
+        </h3>
+
+        <p className="mt-3 text-slate-600">
+          This page is designed to make each business owner think:
+        </p>
+
+        {/* quote card */}
+        <div className="mt-5 rounded-3xl border border-slate-200 bg-slate-50 p-6">
+          <p className="text-slate-900 font-semibold leading-relaxed">
+            “They’ve worked with businesses like mine before — they understand our reality.”
+          </p>
+        </div>
+
+        {/* reassurance */}
+        <div className="mt-5 rounded-3xl border border-slate-200 bg-white p-6">
+          <p className="text-sm font-semibold text-slate-900">
+            This approach reassures both:
+          </p>
+
+          <ul className="mt-4 space-y-4">
+            {[
+              {
+                title: "Small businesses",
+                desc: "You’re not too small for good systems — we build what fits your reality.",
+              },
+              {
+                title: "Larger businesses",
+                desc: "You’re not getting “small business solutions” — we build structure that scales.",
+              },
+            ].map((x) => (
+              <li key={x.title} className="flex items-start gap-3 text-slate-700">
+                <span
+                  className="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full"
+                  style={{ background: "rgba(255,122,0,0.12)" }}
+                >
+                  <span
+                    className="h-2.5 w-2.5 rounded-full"
+                    style={{ background: "var(--brand-orange)" }}
+                  />
+                </span>
+
+                <div>
+                  <p className="font-semibold text-slate-900">{x.title}</p>
+                  <p className="text-sm text-slate-600 mt-1">{x.desc}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <p className="mt-6 text-sm text-slate-600">
+          Result:{" "}
+          <span className="font-medium text-slate-900">
+            systems that match how your industry actually runs — and how your business runs inside it.
+          </span>
+        </p>
+      </div>
+    </div>
+  </Container>
+</section>
+
 
       {/* HOW TO USE */}
       <section className="py-16">
@@ -172,6 +211,9 @@ export default function IndustriesPage() {
             transition={{ duration: 0.55, ease: "easeOut" }}
             className="mx-auto max-w-3xl text-center"
           >
+             <p className="inline-flex items-center gap-2 rounded-full bg-brand-gradient text-white p-2 text-xs font-semibold tracking-widest uppercase text-brandPrimary">
+             HOW TO USE THIS PAGE
+      </p>
             <h2 className="text-3xl font-semibold">
               If Your Industry Is Listed Below, Read It Carefully
             </h2>
@@ -447,7 +489,7 @@ function IndustryCard({
   help,
   result,
 }: {
-  icon: any;
+  icon: React.ElementType;
   title: string;
   common: string[];
   help: string[];
@@ -455,38 +497,107 @@ function IndustryCard({
 }) {
   return (
     <motion.div
-      variants={{
-        hidden: { opacity: 0, y: 18 },
-        show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-      }}
-      className="rounded-3xl border border-slate-200 bg-white/70 p-8 backdrop-blur shadow-[0_18px_60px_-45px_rgba(0,0,0,.45)]"
+      variants={{ hidden: { opacity: 0, y: 14 }, show: { opacity: 1, y: 0 } }}
+      className="group relative overflow-hidden rounded-[28px] border border-slate-200 bg-white/75 backdrop-blur
+                 shadow-[0_18px_60px_-45px_rgba(0,0,0,.40)]
+                 hover:-translate-y-0.5 hover:shadow-[0_28px_90px_-60px_rgba(0,0,0,.55)] transition"
     >
-      <div className="mb-4 flex items-center gap-3">
-        <div className="rounded-xl bg-orange-500/10 p-3 text-orange-600">
-          <Icon size={22} />
+      {/* soft glow */}
+      <div
+        className="pointer-events-none absolute -top-28 -right-28 h-72 w-72 rounded-full blur-3xl opacity-60"
+        style={{
+          background:
+            "radial-gradient(circle at 30% 30%, rgba(255,122,0,0.18), transparent 60%)",
+        }}
+      />
+      <div
+        className="pointer-events-none absolute -bottom-32 -left-32 h-80 w-80 rounded-full blur-3xl opacity-60"
+        style={{
+          background:
+            "radial-gradient(circle at 30% 30%, rgba(255,122,0,0.12), transparent 60%)",
+        }}
+      />
+
+      <div className="relative p-7">
+        {/* header */}
+        <div className="flex items-start gap-4">
+          <div
+            className="h-12 w-12 rounded-2xl border grid place-items-center shadow-sm shrink-0"
+            style={{
+              borderColor: "rgba(255,122,0,0.35)",
+              background: "rgba(255,122,0,0.10)",
+            }}
+          >
+            <Icon className="h-6 w-6" style={{ color: "var(--brand-orange)" }} />
+          </div>
+
+          <div className="flex-1">
+            <h3 className="text-xl font-semibold tracking-tight text-slate-950">
+              {title}
+            </h3>
+            <p className="mt-1 text-sm text-slate-600">
+              Systems designed around how this industry actually runs.
+            </p>
+          </div>
         </div>
-        <h3 className="text-xl font-semibold text-slate-900">{title}</h3>
+
+        {/* blocks */}
+        <div className="mt-6 grid gap-4">
+          {/* Common Reality */}
+          <div className="rounded-2xl border border-slate-200 bg-white p-5">
+            <p className="text-sm font-semibold text-slate-900">Common Reality</p>
+            <ul className="mt-3 space-y-2">
+              {common.map((t) => (
+                <li key={t} className="flex gap-2 text-sm text-slate-700 leading-relaxed">
+                  <span
+                    className="mt-2 h-1.5 w-1.5 rounded-full"
+                    style={{ background: "var(--brand-orange)" }}
+                  />
+                  <span>{t}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* How We Help */}
+          <div className="rounded-2xl border border-slate-200 bg-white p-5">
+            <p className="text-sm font-semibold text-slate-900">How We Help</p>
+            <ul className="mt-3 space-y-2">
+              {help.map((t) => (
+                <li key={t} className="flex gap-2 text-sm text-slate-700">
+                  <CheckCircle2
+                    className="h-4 w-4 mt-0.5"
+                    style={{ color: "var(--brand-orange)" }}
+                  />
+                  <span>{t}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </div>
 
-      <p className="font-medium text-slate-800">Common Reality</p>
-      <ul className="mt-2 list-disc space-y-1 pl-5 text-slate-600">
-        {common.map((c) => (
-          <li key={c}>{c}</li>
-        ))}
-      </ul>
+      {/* RESULT (always visible) */}
+     {/* RESULT */}
+<div className="mt-4 rounded-2xl border border-slate-200 bg-white/70 px-7 py-5">
+  <p className="text-xs font-semibold tracking-widest uppercase text-slate-500">
+    Result
+  </p>
 
-      <p className="mt-4 font-medium text-slate-800">How We Help</p>
-      <ul className="mt-2 list-disc space-y-1 pl-5 text-slate-600">
-        {help.map((h) => (
-          <li key={h}>{h}</li>
-        ))}
-      </ul>
+  <ul className="mt-3 mt-2 flex flex-wrap gap-2 space-y-1 text-sm font-medium text-slate-900">
+    {result
+      .split(".")
+      .map((s) => s.trim())
+      .filter(Boolean)
+      .map((item) => (
+        <li className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-1.5 text-xs text-slate-700 shadow-sm" key={item}>{item}</li>
+      ))}
+  </ul>
+</div>
 
-      <p className="mt-5 font-semibold text-slate-900">{result}</p>
     </motion.div>
   );
 }
-
 function Container({ children }: { children: React.ReactNode }) {
   return <div className="mx-auto max-w-7xl px-6">{children}</div>;
 }

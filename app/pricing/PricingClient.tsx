@@ -108,6 +108,7 @@ const factors = [
   "Integration with existing systems",
   "Reporting and dashboard complexity",
   "Ongoing support needs",
+  "We explain all of this before work begins. No surprises.",
 ];
 
 const payFor = [
@@ -312,15 +313,24 @@ export default function PricingPage() {
             whileInView="show"
             viewport={{ once: true }}
             variants={stagger}
-            className="mx-auto max-w-5xl"
+            className="mx-auto"
           >
+            <div className="text-center">
+              <motion.div
+                variants={fadeUp}
+                className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/70 px-4 py-2 text-xs font-semibold tracking-wide text-orange-600 backdrop-blur"
+              >
+                <ShieldCheck size={14} />
+                Pricing Tiers 
+              </motion.div>
+
             <motion.h2 variants={fadeUp} className="text-3xl font-semibold text-slate-900">
               We Work Across Three Common Engagement Levels
             </motion.h2>
             <motion.p variants={fadeUp} className="mt-3 text-slate-600">
               These are guides, not fixed packages.
             </motion.p>
-
+      </div>
             <motion.div variants={fadeUp} className="mt-10 grid gap-8 lg:grid-cols-3">
               {tiers.map((t) => (
                 <TierCard key={t.name} tier={t} />
@@ -451,6 +461,12 @@ export default function PricingPage() {
                 ))}
               </ul>
             </motion.div>
+            <motion.div
+              variants={fadeUp}
+              className="mt-8 rounded-full border border-slate-200 bg-white/70 p-8 backdrop-blur shadow-[0_18px_60px_-45px_rgba(0,0,0,.45)]"
+            >
+             <h4 className="text-center">You’re not just paying for software. You’re paying for clarity, stability, and reduced risk.</h4>
+            </motion.div>
           </motion.div>
         </Container>
       </section>
@@ -469,9 +485,8 @@ export default function PricingPage() {
               What We Don’t Do
             </motion.h2>
 
-            <motion.p variants={fadeUp} className="mt-4 text-white/80">
-              If price is the only factor, we’re not the right partner — and
-              that’s okay.
+            <motion.p variants={fadeUp} className="inline-flex bg-brand-gradient items-center gap-2 rounded-full border border-slate-200 bg-white/70 px-4 py-2 text-xs font-semibold tracking-wide text-white">
+            We Do Not
             </motion.p>
 
             <motion.div variants={fadeUp} className="mt-10 grid gap-3 sm:grid-cols-2">
@@ -487,48 +502,84 @@ export default function PricingPage() {
                 </div>
               ))}
             </motion.div>
+            <motion.p variants={fadeUp} className="text-xs mt-8 font-semibold tracking-widest uppercase text-slate-400">
+              If price is the only factor, we’re not the right partner — and
+              that’s okay.
+            </motion.p>
           </motion.div>
         </Container>
       </section>
 
       {/* SECTION 7 — OWNER QUOTES */}
       <section className="bg-white py-20">
-        <Container>
-          <motion.div
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            variants={stagger}
-            className="mx-auto max-w-5xl"
+  <Container>
+    <motion.div
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true }}
+      variants={stagger}
+      className="mx-auto max-w-5xl"
+    >
+      {/* label */}
+      <div className="text-center">
+      <motion.p
+        variants={fadeUp}
+        className="text-xs font-semibold tracking-widest uppercase text-orange-600"
+      >
+        A NOTE ON VALUE (THIS SPEAKS
+DIRECTLY TO OWNERS)
+      </motion.p>
+
+      {/* heading */}
+      <motion.h2
+        variants={fadeUp}
+        className="mt-3 text-3xl font-semibold text-slate-900"
+      >
+        Systems Pay for Themselves Quietly
+      </motion.h2>
+
+      {/* intro */}
+      <motion.p variants={fadeUp} className="mt-4 text-slate-600 max-w-3xl">
+        Strong systems don’t just save money. They save energy, time, and
+        mental space.
+      </motion.p>
+      </div>
+
+      {/* owner quotes */}
+      <motion.div
+        variants={fadeUp}
+        className="mt-10 mb-10 grid gap-4 md:grid-cols-3"
+      >
+        {ownerQuotes.map((q) => (
+          <div
+            key={q}
+            className="rounded-3xl border border-slate-200 bg-white/70 p-7 backdrop-blur
+                       shadow-[0_18px_60px_-45px_rgba(0,0,0,.45)]"
           >
-            <motion.h2 variants={fadeUp} className="text-3xl font-semibold text-slate-900">
-              Systems Pay for Themselves Quietly
-            </motion.h2>
+            <div className="flex items-start gap-3">
+              <Quote className="mt-1 h-5 w-5 text-orange-600 shrink-0" />
+              <p className="text-slate-700">{q}</p>
+            </div>
+          </div>
+        ))}
+      </motion.div>
 
-            <motion.p variants={fadeUp} className="mt-4 text-slate-600">
-              Strong systems don’t just save money. They save energy, time, and
-              mental space.
-            </motion.p>
+      {/* closing line */}
+      <motion.p
+        variants={fadeUp}
+        className="mt-10 text-slate-600 text-center rounded-full border border-slate-200 bg-white p-6 shadow-sm "
+      >
+        Owners often tell us they didn’t realize how much time they were losing,
+        how blind certain decisions had become, or how much stress the lack of
+        systems was quietly causing.
+      </motion.p>
+    </motion.div>
+  </Container>
+</section>
 
-            <motion.div variants={fadeUp} className="mt-8 grid gap-4 md:grid-cols-3">
-              {ownerQuotes.map((q) => (
-                <div
-                  key={q}
-                  className="rounded-3xl border border-slate-200 bg-white/70 p-7 backdrop-blur shadow-[0_18px_60px_-45px_rgba(0,0,0,.45)]"
-                >
-                  <div className="flex items-start gap-3">
-                    <Quote className="mt-1 h-5 w-5 text-orange-600" />
-                    <p className="text-slate-700">{q}</p>
-                  </div>
-                </div>
-              ))}
-            </motion.div>
-          </motion.div>
-        </Container>
-      </section>
 
       {/* FINAL CTA */}
-      <section className="relative overflow-hidden bg-white py-20">
+      <section className="relative overflow-hidden bg-white py-10">
         <Container>
           <motion.div
             initial={{ opacity: 0, y: 18 }}

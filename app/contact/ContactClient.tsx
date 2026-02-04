@@ -12,6 +12,11 @@ import {
   Clock,
   ShieldCheck,
   CheckCircle2,
+  Wrench,
+  FileText,
+  Sparkles,
+  AlertCircle,
+  MessageSquareText,
 } from "lucide-react";
 
 /**
@@ -39,8 +44,21 @@ const stagger: Variants = {
   show: { transition: { staggerChildren: 0.08 } },
 };
 
+// ✅ Intro points as separate cards with icons
+const introPoints = [
+  { icon: Wrench, text: "You don’t need to know what software you need." },
+  { icon: FileText, text: "You don’t need to prepare a proposal." },
+  { icon: Sparkles, text: "You don’t need to explain everything perfectly." },
+  { icon: AlertCircle, text: "You just need to explain what feels broken." },
+  { icon: MessageSquareText, text: "That’s enough to start." },
+];
+
 export default function ContactPage() {
-  const [status, setStatus] = useState<"idle" | "sending" | "sent">("idle");
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">(
+    "idle"
+  );
+  const [errorMsg, setErrorMsg] = useState("");
+
   const [form, setForm] = useState({
     fullName: "",
     company: "",
@@ -64,14 +82,31 @@ export default function ContactPage() {
     setForm((p) => ({ ...p, [key]: value }));
   }
 
+  // ✅ REAL submission (calls /api/contact)
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
-    if (!canSubmit || status !== "idle") return;
+    if (!canSubmit || status === "sending") return;
 
-    // Replace this with your real handler (n8n / form endpoint / email service).
-    setStatus("sending");
-    await new Promise((r) => setTimeout(r, 900));
-    setStatus("sent");
+    try {
+      setErrorMsg("");
+      setStatus("sending");
+
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data?.message || "Failed to send. Please try again.");
+      }
+
+      setStatus("sent");
+    } catch (err: any) {
+      setStatus("error");
+      setErrorMsg(err?.message || "Something went wrong.");
+    }
   }
 
   return (
@@ -112,18 +147,36 @@ export default function ContactPage() {
               </span>
             </motion.div>
 
-            <motion.p
-              variants={fadeUp}
-              className="mt-8 max-w-3xl mx-auto text-lg text-slate-600"
+            {/* ✅ REPLACED paragraph with separate cards */}
+            <motion.div
+              variants={stagger}
+              className="mt-10 mx-auto max-w-5xl grid gap-4 sm:grid-cols-2 lg:grid-cols-5 text-left"
             >
-              You don’t need to know what software you need. You don’t need to
-              prepare a proposal. You don’t need to explain everything perfectly.
-              <br />
-              <span className="font-medium text-slate-800">
-                You just need to explain what feels broken. That’s enough to
-                start.
-              </span>
-            </motion.p>
+              {introPoints.map((p) => {
+                const Icon = p.icon;
+                return (
+                  <motion.div
+                  key={p.text}
+                  variants={fadeUp}
+                  className="group rounded-[32px] border border-slate-200 bg-white/70 backdrop-blur
+                             shadow-[0_18px_60px_-45px_rgba(0,0,0,.45)] p-7 text-center"
+                >
+                  <div className="mx-auto grid h-14 w-14 place-items-center rounded-2xl border shadow-sm"
+                    style={{
+                      borderColor: "rgba(255,122,0,0.35)",
+                      background: "rgba(255,122,0,0.10)",
+                    }}
+                  >
+                    <Icon className="h-6 w-6" style={{ color: "var(--brand-orange)" }} />
+                  </div>
+          
+                  <p className="mt-4 text-sm font-small leading-relaxed text-slate-800">
+                    {p.text}
+                  </p>
+                </motion.div>
+                );
+              })}
+            </motion.div>
 
             <motion.div
               variants={fadeUp}
@@ -173,24 +226,27 @@ export default function ContactPage() {
             variants={stagger}
             className="mx-auto max-w-5xl"
           >
+            {/* ✅ Center heading block like your screenshot */}
+            <div className="text-center">
+              <motion.div
+                variants={fadeUp}
+                className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-xs font-semibold tracking-wide text-orange-600"
+              >
+                <ShieldCheck size={14} />
+                REASSURANCE
+              </motion.div>
+
+              <motion.h2
+                variants={fadeUp}
+                className="mt-5 text-3xl font-semibold text-slate-900"
+              >
+                What This Conversation Is — and Isn’t
+              </motion.h2>
+            </div>
+
             <motion.div
               variants={fadeUp}
-              className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-xs font-semibold tracking-wide text-orange-600"
-            >
-              <ShieldCheck size={14} />
-              REASSURANCE
-            </motion.div>
-
-            <motion.h2
-              variants={fadeUp}
-              className="mt-5 text-3xl font-semibold text-slate-900"
-            >
-              What This Conversation Is — and Isn’t
-            </motion.h2>
-
-            <motion.div
-              variants={fadeUp}
-              className="mt-8 grid gap-6 md:grid-cols-2"
+              className="mt-8 grid gap-6 md:grid-cols-2 text-left"
             >
               <div className="rounded-3xl border border-slate-200 bg-white/70 p-7 backdrop-blur shadow-[0_18px_60px_-45px_rgba(0,0,0,.45)]">
                 <div className="text-sm font-semibold text-slate-900">
@@ -221,7 +277,7 @@ export default function ContactPage() {
                     "A commitment to move forward",
                   ].map((x) => (
                     <li key={x} className="flex gap-3">
-                      <span className="mt-0.5 h-5 w-5 rounded-full bg-slate-900/10" />
+                       <CheckCircle2 className="mt-0.5 h-5 w-5 text-orange-600" />
                       <span>{x}</span>
                     </li>
                   ))}
@@ -338,7 +394,7 @@ export default function ContactPage() {
 
                   <button
                     type="submit"
-                    disabled={!canSubmit || status !== "idle"}
+                    disabled={!canSubmit || status === "sending"}
                     className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand-gradient px-8 py-4 font-semibold text-white shadow-sm transition hover:opacity-90 disabled:opacity-60"
                   >
                     {status === "idle" && (
@@ -348,7 +404,14 @@ export default function ContactPage() {
                     )}
                     {status === "sending" && "Sending…"}
                     {status === "sent" && "Message Sent ✅"}
+                    {status === "error" && "Try Again"}
                   </button>
+
+                  {status === "error" && (
+                    <p className="text-center text-sm text-red-600">
+                      {errorMsg || "Something went wrong. Please try again."}
+                    </p>
+                  )}
 
                   <p className="text-center text-sm text-slate-500">
                     No pressure. No obligation.
@@ -393,7 +456,7 @@ export default function ContactPage() {
 
                   <div className="mt-4 space-y-3">
                     <a
-                      href="https://wa.me/"
+                      href="https://wa.me/+18765356390"
                       className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-3 text-slate-900 transition hover:bg-slate-50"
                     >
                       <MessageCircle className="text-orange-600" />
@@ -406,7 +469,7 @@ export default function ContactPage() {
                     </a>
 
                     <a
-                      href="tel:"
+                      href="tel:+1 876 535 6390"
                       className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-3 text-slate-900 transition hover:bg-slate-50"
                     >
                       <Phone className="text-orange-600" />
@@ -419,7 +482,8 @@ export default function ContactPage() {
                     </a>
 
                     <a
-                      href="mailto:"
+                      href="mailto:
+                      info@pithhub.com"
                       className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-3 text-slate-900 transition hover:bg-slate-50"
                     >
                       <Mail className="text-orange-600" />
@@ -470,8 +534,15 @@ export default function ContactPage() {
             whileInView="show"
             viewport={{ once: true }}
             variants={stagger}
-            className="mx-auto max-w-5xl"
+            className="mx-auto max-w-5xl text-center"
           >
+             <motion.div
+                variants={fadeUp}
+                className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white mb-3 px-4 py-2 text-xs font-semibold tracking-wide text-orange-600"
+              >
+                <ShieldCheck size={14} />
+                REASSURANCE
+              </motion.div>
             <motion.h2
               variants={fadeUp}
               className="text-3xl font-semibold text-slate-900"

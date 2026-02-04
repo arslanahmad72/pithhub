@@ -253,7 +253,7 @@ export default function HowWeWorkClient() {
             whileInView="show"
             viewport={{ once: true }}
             variants={stagger}
-            className="mx-auto max-w-4xl"
+            className="mx-auto "
           >
             <motion.div
               variants={fadeUp}
@@ -326,7 +326,7 @@ export default function HowWeWorkClient() {
             whileInView="show"
             viewport={{ once: true }}
             variants={stagger}
-            className="mx-auto max-w-4xl text-center"
+            className="mx-auto  text-center"
           >
             <motion.h2 variants={fadeUp} className="text-3xl font-semibold md:text-4xl">
               This Process Is Designed to Prevent
@@ -388,43 +388,72 @@ export default function HowWeWorkClient() {
       </section>
 
       {/* YOUR ROLE */}
-      <section className="py-20">
-        <Container>
-          <motion.div
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            variants={stagger}
-            className="mx-auto max-w-5xl"
+      <section className="relative overflow-hidden bg-slate-950 py-24">
+  {/* soft background glow (same vibe) */}
+  <div className="pointer-events-none absolute inset-0">
+    <div
+      className="absolute -top-40 -right-40 h-[32rem] w-[32rem] rounded-full blur-3xl opacity-20"
+      style={{
+        background:
+          "radial-gradient(circle at 30% 30%, rgba(255,122,0,0.22), transparent 60%)",
+      }}
+    />
+    <div
+      className="absolute -bottom-52 -left-52 h-[36rem] w-[36rem] rounded-full blur-3xl opacity-10"
+      style={{
+        background:
+          "radial-gradient(circle at 30% 30%, rgba(255,255,255,0.14), transparent 60%)",
+      }}
+    />
+  </div>
+
+  <Container>
+    <motion.div
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true }}
+      variants={stagger}
+      className="relative mx-auto  text-center"
+    >
+      {/* Title (same style as screenshot) */}
+      <motion.h2
+        variants={fadeUp}
+        className="text-4xl md:text-5xl font-semibold tracking-tight text-white"
+      >
+        What We Need From You.
+      </motion.h2>
+
+      {/* Subtitle line */}
+      <motion.p
+        variants={fadeUp}
+        className="mt-6 text-base md:text-lg leading-relaxed text-slate-300"
+      >
+        Simple alignment. Fast decisions. Clear inputs.
+        <br className="hidden md:block" />
+        So we can build systems that actually stick.
+      </motion.p>
+
+      {/* Pills grid (THIS is the part you want) */}
+      <motion.div
+        variants={fadeUp}
+        className="mt-12 grid gap-6 md:grid-cols-2"
+      >
+        {yourRole.map((x) => (
+          <div
+            key={x}
+            className="rounded-2xl border border-white/10 bg-white/5 px-8 py-6
+                       text-base md:text-lg font-medium text-white/90
+                       shadow-[0_18px_60px_-45px_rgba(0,0,0,.75)]
+                       backdrop-blur"
           >
-            <motion.div
-              variants={fadeUp}
-              className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/70 px-4 py-2 text-xs font-semibold tracking-wide text-orange-600 backdrop-blur"
-            >
-              <UserCheck size={14} />
-              YOUR ROLE
-            </motion.div>
+            {x}
+          </div>
+        ))}
+      </motion.div>
+    </motion.div>
+  </Container>
+</section>
 
-            <motion.h2 variants={fadeUp} className="mt-4 text-3xl font-semibold">
-              What We Need From You
-            </motion.h2>
-
-            <motion.div
-              variants={fadeUp}
-              className="mt-8 rounded-3xl border border-slate-200 bg-white/70 p-8 backdrop-blur shadow-[0_18px_60px_-45px_rgba(0,0,0,.45)]"
-            >
-              <ul className="space-y-3 text-slate-700">
-                {yourRole.map((x) => (
-                  <li key={x} className="flex gap-3">
-                    <CheckCircle2 className="mt-0.5 h-5 w-5 text-orange-600" />
-                    <span>{x}</span>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          </motion.div>
-        </Container>
-      </section>
 
       {/* FINAL CTA */}
       <section className="relative overflow-hidden bg-white py-20">

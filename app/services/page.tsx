@@ -11,6 +11,7 @@ import {
   LifeBuoy,
   ArrowRight,
   CheckCircle2,
+  ShieldCheck,
   Sparkles,
 } from "lucide-react";
 const SITE_URL = "https://pithhub.com"; // ✅ change to your real domain
@@ -42,22 +43,28 @@ const SERVICES = [
     num: "03",
   },
   {
+    title: "Cybersecurity, Access & Data Control",
+    desc: "Protect customer data, control system access, and reduce internal and external risk.",
+    href: "/services/cybersecurity-access-data-control",
+    num: "04",
+  },  
+  {
     title: "Digital Marketing",
     desc: "Track results, not vanity metrics.",
     href: "/services/digital-marketing",
-    num: "04",
+    num: "05",
   },
   {
     title: "System Integration",
     desc: "Connect tools so data flows automatically.",
     href: "/services/system-integration",
-    num: "05",
+    num: "06",
   },
   {
     title: "Support & Training",
     desc: "Ensure systems are used correctly and evolve over time.",
     href: "/services/support",
-    num: "06",
+    num: "07",
   },
 ];
 
@@ -274,8 +281,8 @@ export default function ServicesPage() {
       <section className="bg-white">
   <div className="max-w-7xl mx-auto px-6 py-16">
     {/* Heading */}
-    <div className="max-w-3xl">
-      <p className="text-xs font-semibold tracking-[0.22em] uppercase text-slate-500">
+    <div className="text-center">
+      <p className="inline-flex items-center gap-2 rounded-full bg-brand-gradient text-white p-2 text-xs font-semibold tracking-widest uppercase text-brandPrimary">
         BUILT FOR CONTROL
       </p>
 
@@ -314,24 +321,32 @@ export default function ServicesPage() {
           icon: Globe,
         },
         {
+          title: "Cybersecurity, Access & Data Control",
+          desc: "Protect customer data, control system access, and reduce internal and external risk.",
+          href: "/services/cybersecurity-access-data-control",
+          num: "04",
+          icon:ShieldCheck 
+        },
+        
+        {
           title: "Digital Marketing With Accountability",
           desc: "Know exactly what’s working, what’s not, and why.",
           href: "/services/digital-marketing",
-          num: "04",
+          num: "05",
           icon: Megaphone,
         },
         {
           title: "System Integration & Automation",
           desc: "Connect your tools so data flows automatically without duplication.",
           href: "/services/system-integration",
-          num: "05",
+          num: "06",
           icon: PlugZap,
         },
         {
           title: "Support, Training & Improvement",
           desc: "Ongoing support so systems stay useful as your business evolves.",
           href: "/services/support",
-          num: "06",
+          num: "07",
           icon: LifeBuoy,
         },
       ].map((s) => {

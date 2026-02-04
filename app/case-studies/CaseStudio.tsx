@@ -195,7 +195,7 @@ export default function CaseStudiesClient() {
       </section>
 
       {/* INTRO (image + copy) */}
-      <section className="relative py-20">
+      <section className="relative py-10">
         <Container>
           <div className="grid items-center gap-12 md:grid-cols-2">
             <motion.div
@@ -296,7 +296,7 @@ export default function CaseStudiesClient() {
       </section>
 
       {/* CASES GRID */}
-      <section className="py-20">
+      <section className="py-10">
         <Container>
           <motion.div
             initial="hidden"
@@ -313,7 +313,7 @@ export default function CaseStudiesClient() {
       </section>
 
       {/* PATTERN SECTION */}
-      <section className="border-y border-slate-200 bg-white py-20">
+      <section className="border-y border-slate-200 bg-white py-10">
         <Container>
           <motion.div
             initial="hidden"
@@ -322,6 +322,14 @@ export default function CaseStudiesClient() {
             variants={stagger}
             className="mx-auto max-w-4xl text-center"
           >
+             <motion.div
+              variants={fadeUp}
+              className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/70 px-4 py-2 text-xs font-semibold tracking-wide text-orange-600 backdrop-blur"
+            >
+              <ClipboardList size={14} />
+              What all these projects have in common
+            </motion.div>
+
             <motion.h2 variants={fadeUp} className="text-3xl font-semibold">
               The Pattern Is Always the Same
             </motion.h2>
@@ -352,42 +360,64 @@ export default function CaseStudiesClient() {
       </section>
 
       {/* CONFIDENTIALITY */}
-      <section className="py-20">
-        <Container>
-          <motion.div
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            variants={stagger}
-            className="mx-auto max-w-3xl text-center"
+      <section className="relative overflow-hidden bg-slate-950 py-24">
+  {/* soft gradients */}
+  <div className="pointer-events-none absolute inset-0">
+    <div className="absolute -top-32 -left-32 h-96 w-96 rounded-full blur-3xl opacity-20"
+      style={{
+        background:
+          "radial-gradient(circle at 30% 30%, rgba(255,122,0,0.25), transparent 60%)",
+      }}
+    />
+    <div className="absolute -bottom-40 -right-40 h-[28rem] w-[28rem] rounded-full blur-3xl opacity-10"
+      style={{
+        background:
+          "radial-gradient(circle at 30% 30%, rgba(255,255,255,0.15), transparent 60%)",
+      }}
+    />
+  </div>
+
+  <Container>
+    <div className="relative mx-auto max-w-3xl text-center">
+      <p className="text-xs font-semibold tracking-widest uppercase text-slate-400">
+        Important Note on Confidentiality
+      </p>
+
+      <h2 className="mt-4 text-3xl md:text-4xl font-semibold tracking-tight text-white">
+        Discretion Is Part of the System
+      </h2>
+
+      <p className="mt-6 text-base leading-relaxed text-slate-300">
+        Many of our clients operate in sensitive environments or highly competitive
+        markets. Because of this, discretion isn’t optional — it’s expected.
+      </p>
+
+      <div className="mt-8 grid gap-4 md:grid-cols-3">
+        {[
+          "Some details are intentionally generalized",
+          "Certain examples are anonymized",
+          "The focus remains on outcomes, not exposure",
+        ].map((item) => (
+          <div
+            key={item}
+            className="rounded-2xl border border-white/10 bg-white/5 px-6 py-4 text-sm text-slate-200"
           >
-            <motion.h2 variants={fadeUp} className="text-3xl font-semibold">
-              Important Note on Confidentiality
-            </motion.h2>
+            {item}
+          </div>
+        ))}
+      </div>
 
-            <motion.p variants={fadeUp} className="mt-4 text-slate-600">
-              Many businesses prefer discretion. Because of this:
-            </motion.p>
+      <p className="mt-8 text-sm leading-relaxed text-slate-400">
+        What matters isn’t public recognition. What matters is how problems were
+        solved, systems stabilized, and leaders regained control.
+      </p>
+    </div>
+  </Container>
+</section>
 
-            <motion.div
-              variants={fadeUp}
-              className="mt-8 rounded-3xl border border-slate-200 bg-white/70 p-8 text-left shadow-[0_18px_60px_-45px_rgba(0,0,0,.45)] backdrop-blur"
-            >
-              <ul className="space-y-2 text-slate-700">
-                <li>• Some details are generalized</li>
-                <li>• Some examples are anonymized</li>
-                <li>• The focus is on outcomes, not exposure</li>
-              </ul>
-              <p className="mt-4 text-slate-600">
-                What matters is how problems were solved — not public recognition.
-              </p>
-            </motion.div>
-          </motion.div>
-        </Container>
-      </section>
 
       {/* FINAL CTA */}
-      <section className="relative overflow-hidden bg-white py-20">
+      <section className="relative overflow-hidden bg-white py-10">
         <Container>
           <motion.div
             initial={{ opacity: 0, y: 18 }}
