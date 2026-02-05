@@ -1,4 +1,4 @@
-﻿// app/services/websites-that-support-the-business/page.tsx
+﻿// app/services/cybersecurity-business-protection/page.tsx
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
@@ -9,22 +9,20 @@ import {
   LayoutDashboard,
   PlugZap,
   Workflow,
+  ShieldCheck,
+  LockKeyhole,
+  ListChecks,
   BadgeCheck,
   Users,
-  LockKeyhole,
-  ShieldCheck,
   LineChart,
-  ListChecks,
-  Link2,
-  Smartphone,
-  Mail,
+  AlertTriangle,
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Websites That Support the Business | PithHub (Jamaica)",
+  title: "Cybersecurity & Business Protection | PithHub (Jamaica)",
   description:
-    "Websites that actively support sales, follow-up, and operations — clear messaging, structured enquiries, integrations, and mobile-first performance.",
-  alternates: { canonical: "/services/websites-that-support-the-business" },
+    "Practical cybersecurity and business protection that reduces risk, improves accountability, and strengthens recovery — without slowing daily operations.",
+  alternates: { canonical: "/services/cybersecurity-business-protection" },
 };
 
 function Container({ children }: { children: React.ReactNode }) {
@@ -160,81 +158,92 @@ function StepCard({
   );
 }
 
-export default function WebsitesThatSupportBusinessPage() {
-  // ✅ EXACT CONTENT (you provided) — mapped into sections
+export default function CybersecurityBusinessProtectionPage() {
+  // ✅ EXACT CONTENT (you provided)
 
-  // Day-to-day
+  // Intro “risk” bullets
+  const riskBullets = [
+    "Who has access to what",
+    "What happens if something goes wrong",
+    "Whether the business could recover quickly",
+    "Whether mistakes, misuse, or fraud could slip through",
+  ];
+
+  // Day-to-day risk signs
   const dayToDay = [
-    "Enquiries lack important details",
-    "Too many time-wasters, not enough real buyers",
-    "Follow-up depends on someone remembering",
-    "Website forms don’t connect to anything",
-    "You can’t see where leads go after they arrive",
+    "Too many people have access to sensitive information",
+    "You’re not sure who changed what — or when",
+    "When staff leave, access isn’t fully removed",
+    "Customer or financial data lives in too many places",
+    "If something breaks or gets compromised, there’s no clear plan",
   ];
 
-  // What we build
-  const whatWeBuild = [
-    "Clear messaging that attracts the right enquiries",
-    "Structured forms that capture useful information",
-    "Direct integration with sales and follow-up systems",
-    "Mobile-friendly layouts for real-world use",
+  // What we protect
+  const protectAreas = [
+    "Customer information",
+    "Financial data",
+    "Internal systems",
+    "Staff access and permissions",
+    "Business continuity",
   ];
 
-  // Built-in control & protection
-  const protection = [
-    "Secure form handling",
-    "Controlled access for updates",
-    "Protection of customer information",
-    "Data backups and recovery planning",
+  // What we put in place
+  const putInPlace = [
+    "Role-based access (right people, right permissions)",
+    "Approval controls for sensitive actions",
+    "Activity logs for accountability",
+    "Secure handling of customer data",
+    "Regular data backups",
+    "Clear recovery procedures if something goes wrong",
   ];
 
   // What changes after implementation
   const changesAfter = [
-    "Enquiries improve in quality",
-    "Follow-up becomes structured",
-    "Less manual chasing",
-    "Fewer missed opportunities",
-    "Clear visibility from enquiry to outcome",
+    "Risk is reduced without slowing work",
+    "Accountability is clear",
+    "Internal misuse becomes harder",
+    "External threats are less damaging",
+    "Recovery is faster and controlled",
   ];
 
-  // Who for
+  // What this is not
+  const weDoNot = ["Sell panic", "Promise “nothing can ever go wrong”", "Overload the business with restrictions"];
+  const weFocusOn = ["Reducing risk", "Limiting damage", "Ensuring recovery"];
+
+  // Who it’s for
   const whoFor = [
-    "Rely on enquiries to drive sales",
-    "Want better lead quality",
-    "Need the website to connect to internal systems",
-    "Are tired of “pretty” sites that don’t perform",
+    "Rely on digital systems daily",
+    "Handle customer or financial data",
+    "Have multiple staff accessing systems",
+    "Want peace of mind as they grow",
   ];
 
-  // How we work (exact steps)
+  // How we work steps
   const steps = [
     {
       n: "01",
-      title: "Understand how enquiries should flow",
-      desc: "We start by mapping the real journey from enquiry → follow-up → outcome.",
+      title: "Identify where real risk exists",
+      desc: "We focus on practical exposure — not abstract technical rules.",
     },
     {
       n: "02",
-      title: "Identify what information matters most",
-      desc: "We define what you need to capture so leads are useful and actionable.",
+      title: "Decide what actually needs protection",
+      desc: "We protect business-critical areas first, without overreach.",
     },
     {
       n: "03",
-      title: "Design pages and forms around that",
-      desc: "Messaging and structure are built to attract the right enquiries and reduce noise.",
+      title: "Implement simple, effective controls",
+      desc: "Role-based access, approvals, and accountability built into daily work.",
     },
     {
       n: "04",
-      title: "Connect everything into your systems",
-      desc: "We integrate your website into your sales and follow-up workflow so nothing gets lost.",
+      title: "Ensure recovery plans are clear",
+      desc: "So if something breaks or gets compromised, recovery is controlled and fast.",
     },
   ];
 
-  // Realistic expectation bullets
-  const expectation = [
-    "evolve with the business",
-    "adjust as sales processes change",
-    "stay connected to real operations",
-  ];
+  // Realistic expectation
+  const expectation = ["reduce exposure", "limit impact", "recover quickly"];
 
   return (
     <main className="bg-white text-slate-900">
@@ -252,7 +261,7 @@ export default function WebsitesThatSupportBusinessPage() {
         />
         <div className="relative max-w-7xl mx-auto px-6 pt-16 md:pt-20 pb-16 md:pb-20 text-center">
           <h1 className="text-4xl md:text-6xl font-semibold tracking-tight text-slate-900">
-            Websites That Support the Business
+            Cybersecurity & Business Protection
           </h1>
 
           <div className="mt-4 text-sm text-slate-500">
@@ -265,7 +274,7 @@ export default function WebsitesThatSupportBusinessPage() {
             </Link>
             <span className="mx-2">›</span>
             <span className="font-medium" style={{ color: "var(--brand-orange)" }}>
-              Websites
+              Cybersecurity
             </span>
           </div>
 
@@ -303,8 +312,8 @@ export default function WebsitesThatSupportBusinessPage() {
                 />
                 <div className="relative overflow-hidden rounded-[28px] border border-slate-200 bg-slate-100 shadow-sm">
                   <Image
-                    src="https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1600&q=80"
-                    alt="Websites that support sales, follow-up, and operations"
+                    src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=1600&q=80"
+                    alt="Business protection and operational resilience"
                     width={1600}
                     height={1100}
                     unoptimized
@@ -316,26 +325,27 @@ export default function WebsitesThatSupportBusinessPage() {
 
             {/* Content */}
             <div className="lg:col-span-6">
-              <OrangePill>ABOVE THE FOLD</OrangePill>
+              <OrangePill>PAGE INTRO (ABOVE THE FOLD)</OrangePill>
 
               <h2 className="mt-5 text-4xl md:text-5xl font-semibold tracking-tight leading-[1.05]">
-                A Website Should Reduce Work —
+                Protection That Keeps the Business Running —
                 <span className="block font-serif italic font-medium text-slate-700">
-                  Not Create More of It
+                  Not Slowing It Down
                 </span>
               </h2>
 
               <div className="mt-6 space-y-4 text-slate-600 leading-relaxed">
-                <p>Most business websites exist. Very few actually help the business run better.</p>
-                <p>
-                  When enquiries are poor quality, follow-up is manual, and the website doesn’t connect
-                  to internal systems, the result is wasted time and missed opportunities.
-                </p>
-                <p>
-                  This service exists to build websites that actively support sales, follow-up, and
-                  operations — not just marketing.
-                </p>
+                <p>Most business owners don’t think about “cybersecurity” every day. They think about risk.</p>
               </div>
+
+              <div className="mt-5 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+                <BulletList items={riskBullets} />
+              </div>
+
+              <p className="mt-5 text-slate-600 leading-relaxed">
+                This service exists to protect your systems, data, and operations — quietly, reliably, and
+                without disrupting daily work.
+              </p>
 
               <div className="mt-8 flex gap-3 flex-wrap">
                 <OrangeButton href="/contact">Talk to Us</OrangeButton>
@@ -343,7 +353,7 @@ export default function WebsitesThatSupportBusinessPage() {
               </div>
 
               <p className="mt-4 text-xs text-slate-500">
-                Micro-copy: Better enquiries start with better structure.
+                Micro-copy: Calm preparation beats reactive damage.
               </p>
             </div>
           </div>
@@ -356,45 +366,43 @@ export default function WebsitesThatSupportBusinessPage() {
           <div className="py-14 md:py-20 grid gap-12 lg:grid-cols-12 items-start">
             <div className="lg:col-span-5">
               <p className="text-xs font-semibold tracking-[0.22em] uppercase text-slate-500">
-                DAY-TO-DAY
+                WHAT THIS FEELS LIKE DAY-TO-DAY
               </p>
 
               <h3 className="mt-4 text-4xl md:text-5xl font-semibold tracking-tight">
                 If this sounds familiar,
                 <span className="block font-serif italic font-medium text-slate-700">
-                  the website is part of the problem
+                  risk is unmanaged
                 </span>
               </h3>
 
               <div className="mt-6 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
                 <BulletList items={dayToDay} />
-                <p className="mt-5 text-slate-600">
-                  The website creates activity — not clarity.
-                </p>
+                <p className="mt-5 text-slate-600">The business works — but it feels exposed.</p>
               </div>
             </div>
 
             <div className="lg:col-span-7">
               <div className="grid gap-5 sm:grid-cols-2">
                 <FeatureCard
-                  icon={ListChecks}
-                  title="Better inputs"
-                  desc="Capture the information that actually matters, so enquiries are usable."
+                  icon={LockKeyhole}
+                  title="Access control"
+                  desc="Reduce unnecessary access to sensitive information."
+                />
+                <FeatureCard
+                  icon={ClipboardCheck}
+                  title="Accountability"
+                  desc="Know who changed what — and when — through clear activity logs."
                 />
                 <FeatureCard
                   icon={Users}
-                  title="Less chasing"
-                  desc="Follow-up becomes structured instead of memory-based."
+                  title="Offboarding clarity"
+                  desc="When staff leave, access removal is complete — not partial."
                 />
                 <FeatureCard
-                  icon={Link2}
-                  title="Connected systems"
-                  desc="Forms and leads don’t sit in inboxes — they go where your workflow goes."
-                />
-                <FeatureCard
-                  icon={LayoutDashboard}
-                  title="Visibility"
-                  desc="You can track where leads go after they arrive — and what happens next."
+                  icon={AlertTriangle}
+                  title="Preparedness"
+                  desc="If something breaks or gets compromised, there’s a clear plan."
                 />
               </div>
             </div>
@@ -402,30 +410,28 @@ export default function WebsitesThatSupportBusinessPage() {
         </Container>
       </section>
 
-      {/* WHAT WE BUILD */}
+      {/* WHAT WE PROTECT */}
       <section className="bg-white">
         <Container>
           <div className="py-14 md:py-20 grid gap-12 lg:grid-cols-12 items-start">
             <div className="lg:col-span-5">
-              <OrangePill>WHAT WE BUILD</OrangePill>
+              <OrangePill>WHAT WE PROTECT</OrangePill>
 
               <h3 className="mt-5 text-4xl md:text-5xl font-semibold tracking-tight">
-                Websites Designed
+                Business-Critical Areas
                 <span className="block font-serif italic font-medium text-slate-700">
-                  to Do a Job
+                  That Can’t Be Left to Chance
                 </span>
               </h3>
 
               <p className="mt-6 text-slate-600 leading-relaxed">
-                We design websites that are clear, focused, and connected to how your business actually works.
+                We focus on protecting what actually matters to the business:
               </p>
 
-              <p className="mt-5 text-slate-600">This includes:</p>
-
               <div className="mt-6 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-                <BulletList items={whatWeBuild} />
+                <BulletList items={protectAreas} />
                 <p className="mt-5 text-slate-600">
-                  The website becomes part of your workflow — not a standalone brochure.
+                  Protection is designed around how work really happens, not abstract technical rules.
                 </p>
               </div>
             </div>
@@ -433,8 +439,8 @@ export default function WebsitesThatSupportBusinessPage() {
             <div className="lg:col-span-7">
               <div className="relative overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-sm">
                 <Image
-                  src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1600&q=80"
-                  alt="Website messaging, forms, and workflow integration"
+                  src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1600&q=80"
+                  alt="Protecting systems, data, and continuity"
                   width={1600}
                   height={1100}
                   unoptimized
@@ -443,21 +449,15 @@ export default function WebsitesThatSupportBusinessPage() {
               </div>
 
               <div className="mt-8 grid gap-5 sm:grid-cols-2">
-                {whatWeBuild.map((t, i) => (
-                  <StepCard key={t} n={`0${i + 1}`} title="This includes" desc={t} />
-                ))}
-              </div>
-
-              <div className="mt-6 grid gap-5 sm:grid-cols-2">
                 <FeatureCard
-                  icon={Smartphone}
-                  title="Mobile-first"
-                  desc="Mobile-friendly layouts built for real-world use."
+                  icon={ShieldCheck}
+                  title="Protection that fits operations"
+                  desc="Designed around real work — so security doesn’t slow the team down."
                 />
                 <FeatureCard
-                  icon={Mail}
-                  title="Follow-up ready"
-                  desc="Enquiries are structured so follow-up becomes faster and more consistent."
+                  icon={Workflow}
+                  title="Continuity-focused"
+                  desc="Built to reduce disruption and improve recovery when something goes wrong."
                 />
               </div>
             </div>
@@ -465,25 +465,28 @@ export default function WebsitesThatSupportBusinessPage() {
         </Container>
       </section>
 
-      {/* BUILT-IN CONTROL & PROTECTION */}
+      {/* WHAT WE PUT IN PLACE */}
       <section className="bg-slate-50/60">
         <Container>
           <div className="py-14 md:py-20 grid gap-12 lg:grid-cols-12 items-start">
             <div className="lg:col-span-5">
-              <OrangePill>CONTROL & PROTECTION</OrangePill>
+              <OrangePill>WHAT WE PUT IN PLACE</OrangePill>
 
               <h3 className="mt-5 text-4xl md:text-5xl font-semibold tracking-tight">
-                Secure by Design
+                Practical Protection
+                <span className="block font-serif italic font-medium text-slate-700">
+                  Built Into Your Systems
+                </span>
               </h3>
 
               <p className="mt-6 text-slate-600 leading-relaxed">
-                Every website we build includes:
+                Depending on your business, this may include:
               </p>
 
               <div className="mt-6 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-                <BulletList items={protection} />
+                <BulletList items={putInPlace} />
                 <p className="mt-5 text-slate-600">
-                  This protects both your business and your customers — without slowing anything down.
+                  These protections are built into your systems — not bolted on afterward.
                 </p>
               </div>
             </div>
@@ -492,23 +495,23 @@ export default function WebsitesThatSupportBusinessPage() {
               <div className="grid gap-5 sm:grid-cols-2">
                 <FeatureCard
                   icon={LockKeyhole}
-                  title="Secure handling"
-                  desc="Secure form handling and protection of customer information."
+                  title="Right permissions"
+                  desc="Role-based access: right people, right permissions."
                 />
                 <FeatureCard
-                  icon={ShieldCheck}
-                  title="Controlled access"
-                  desc="Controlled access for updates — so changes don’t create risk."
+                  icon={ListChecks}
+                  title="Accountability"
+                  desc="Activity logs for accountability, without micromanagement."
                 />
                 <FeatureCard
                   icon={ClipboardCheck}
-                  title="Backups"
-                  desc="Data backups and recovery planning built in from day one."
+                  title="Controls"
+                  desc="Approvals for sensitive actions to reduce mistakes and misuse."
                 />
                 <FeatureCard
-                  icon={BadgeCheck}
-                  title="Protection without friction"
-                  desc="Security built into the workflow — not added later."
+                  icon={PlugZap}
+                  title="Recovery-ready"
+                  desc="Regular backups and clear recovery procedures."
                 />
               </div>
             </div>
@@ -523,21 +526,21 @@ export default function WebsitesThatSupportBusinessPage() {
             <div className="rounded-[28px] border border-slate-200 bg-white p-8 md:p-10 shadow-sm">
               <div className="text-center">
                 <h2 className="text-2xl md:text-3xl font-semibold text-slate-900">
-                  What changes after implementation
+                  WHAT CHANGES AFTER IMPLEMENTATION
                 </h2>
-                <p className="mt-3 text-slate-600">
-                  Once the website supports the business:
-                </p>
+                <p className="mt-3 text-slate-600">When protection is properly in place:</p>
               </div>
 
-              {/* KPI strip (fills space, still clean) */}
               <div className="mt-7 grid gap-4 sm:grid-cols-3">
                 {[
-                  { label: "Lead quality", value: "↑", note: "Fewer time-wasters" },
-                  { label: "Follow-up", value: "✓", note: "Structured and trackable" },
-                  { label: "Visibility", value: "→", note: "Enquiry to outcome" },
+                  { label: "Risk", value: "↓", note: "Reduced without slowing work" },
+                  { label: "Accountability", value: "✓", note: "Clear actions and visibility" },
+                  { label: "Recovery", value: "→", note: "Faster and controlled" },
                 ].map((k) => (
-                  <div key={k.label} className="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">
+                  <div
+                    key={k.label}
+                    className="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm"
+                  >
                     <div className="flex items-center justify-between">
                       <p className="text-sm font-semibold text-slate-900">{k.label}</p>
                       <div
@@ -560,39 +563,37 @@ export default function WebsitesThatSupportBusinessPage() {
                 <div className="lg:col-span-5">
                   <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
                     <BulletList items={changesAfter} />
-                    <p className="mt-5 text-slate-600">
-                      The website stops being a guessing game.
-                    </p>
+                    <p className="mt-5 text-slate-600">The business feels safer and more stable.</p>
                   </div>
                 </div>
 
                 <div className="lg:col-span-7">
                   <div className="grid gap-4 sm:grid-cols-2">
                     <FeatureCard
+                      icon={ShieldCheck}
+                      title="Less damage"
+                      desc="External threats are less damaging when controls and recovery are in place."
+                    />
+                    <FeatureCard
+                      icon={ClipboardCheck}
+                      title="Clear accountability"
+                      desc="You can trace sensitive actions without chasing people for answers."
+                    />
+                    <FeatureCard
+                      icon={Users}
+                      title="Harder misuse"
+                      desc="Internal misuse becomes harder when access and approvals are controlled."
+                    />
+                    <FeatureCard
                       icon={LineChart}
-                      title="Better outcomes"
-                      desc="Fewer missed opportunities because follow-up is structured."
-                    />
-                    <FeatureCard
-                      icon={Workflow}
-                      title="Less manual chasing"
-                      desc="The system supports the process — not a person’s memory."
-                    />
-                    <FeatureCard
-                      icon={LayoutDashboard}
-                      title="Clear visibility"
-                      desc="See what happens after leads arrive — and where they go next."
-                    />
-                    <FeatureCard
-                      icon={BadgeCheck}
-                      title="Real performance"
-                      desc="The website earns its keep by supporting sales and operations."
+                      title="Stable operations"
+                      desc="Risk reduces without slowing work, so daily operations stay smooth."
                     />
                   </div>
 
                   <div className="mt-6 flex flex-wrap items-center justify-between gap-3 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
                     <p className="text-sm text-slate-700">
-                      <span className="font-semibold text-slate-900">Result:</span> Clear visibility from enquiry to outcome.
+                      <span className="font-semibold text-slate-900">Result:</span> Safer, more stable operations.
                     </p>
                     <OrangeButton href="/contact">Talk to Us</OrangeButton>
                   </div>
@@ -603,13 +604,47 @@ export default function WebsitesThatSupportBusinessPage() {
         </Container>
       </section>
 
+      {/* WHAT THIS IS NOT */}
+      <section className="bg-slate-50/60">
+        <Container>
+          <div className="py-14 md:py-20">
+            <div className="rounded-[28px] border border-slate-200 bg-white p-8 md:p-10 shadow-sm">
+              <OrangePill>WHAT THIS IS NOT</OrangePill>
+
+              <h2 className="mt-4 text-2xl md:text-3xl font-semibold text-slate-900">
+                This Is Not Fear-Based Security
+              </h2>
+
+              <div className="mt-6 grid gap-5 lg:grid-cols-12 items-start">
+                <div className="lg:col-span-6">
+                  <p className="text-sm font-semibold text-slate-900">We do not:</p>
+                  <div className="mt-4 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+                    <BulletList items={weDoNot} />
+                  </div>
+                </div>
+
+                <div className="lg:col-span-6">
+                  <p className="text-sm font-semibold text-slate-900">Instead, we focus on:</p>
+                  <div className="mt-4 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+                    <BulletList items={weFocusOn} />
+                    <p className="mt-5 text-slate-600">
+                      That’s what responsible business protection looks like.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+
       {/* WHO THIS SERVICE IS FOR */}
-      <section className="bg-slate-50/60 text-center">
+      <section className="bg-white text-center">
         <Container>
           <div className="py-14 md:py-20">
             <div className="rounded-[28px] border border-slate-200 bg-white p-8 md:p-10 shadow-sm">
               <h2 className="text-2xl md:text-3xl font-semibold text-slate-900">
-                Who this service is for
+                WHO THIS SERVICE IS FOR
               </h2>
 
               <p className="mt-3 text-slate-600 leading-relaxed">
@@ -618,7 +653,10 @@ export default function WebsitesThatSupportBusinessPage() {
 
               <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
                 {whoFor.map((t) => (
-                  <div key={t} className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+                  <div
+                    key={t}
+                    className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
+                  >
                     <p className="font-semibold text-slate-900">{t}</p>
                   </div>
                 ))}
@@ -632,7 +670,7 @@ export default function WebsitesThatSupportBusinessPage() {
                 }}
               >
                 <p className="text-sm text-slate-800">
-                  If your website doesn’t make work easier, it’s not doing its job.
+                  If systems are central to your operations, protection should be intentional.
                 </p>
               </div>
             </div>
@@ -641,26 +679,31 @@ export default function WebsitesThatSupportBusinessPage() {
       </section>
 
       {/* HOW WE WORK */}
-      <section className="bg-white">
+      <section className="bg-slate-50/60">
         <Container>
           <div className="py-14 md:py-20 grid gap-12 lg:grid-cols-12 items-start">
             <div className="lg:col-span-5">
-              <OrangePill>HOW WE WORK</OrangePill>
+              <OrangePill>HOW WE WORK (FOR THIS SERVICE)</OrangePill>
 
               <h3 className="mt-5 text-4xl md:text-5xl font-semibold tracking-tight">
-                Our approach is simple
+                Our approach is calm
                 <span className="block font-serif italic font-medium text-slate-700">
                   and practical
                 </span>
               </h3>
 
               <p className="mt-6 text-slate-600 leading-relaxed">
-                No overdesign. No unnecessary features.
+                No over-engineering. No unnecessary restrictions.
               </p>
 
               <div className="mt-8 flex gap-3 flex-wrap">
                 <OrangeButton href="/contact">Talk to Us</OrangeButton>
                 <OutlineButton href="/services">Back to Services</OutlineButton>
+              </div>
+
+              <div className="mt-6 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+                <p className="text-sm font-semibold text-slate-900">No over-engineering.</p>
+                <p className="mt-2 text-sm text-slate-600">No unnecessary restrictions.</p>
               </div>
             </div>
 
@@ -676,7 +719,7 @@ export default function WebsitesThatSupportBusinessPage() {
       </section>
 
       {/* A REALISTIC EXPECTATION */}
-      <section className="bg-slate-50/60 text-center">
+      <section className="bg-white text-center">
         <Container>
           <div className="py-14 md:py-20">
             <div className="rounded-[28px] overflow-hidden border border-slate-200 bg-white shadow-sm">
@@ -690,11 +733,15 @@ export default function WebsitesThatSupportBusinessPage() {
                 }}
               >
                 <h2 className="text-2xl md:text-3xl font-semibold text-slate-900">
-                  A Good Website Is a System, Not a One-Time Project
+                  A REALISTIC EXPECTATION
                 </h2>
 
                 <p className="mt-4 text-slate-600 leading-relaxed">
-                  Websites work best when they:
+                  Security Is About Preparedness, Not Perfection
+                </p>
+
+                <p className="mt-4 text-slate-600 leading-relaxed">
+                  No business is “perfectly secure.” The goal is to:
                 </p>
 
                 <div className="mt-6 grid gap-3 sm:grid-cols-3">
@@ -703,7 +750,7 @@ export default function WebsitesThatSupportBusinessPage() {
                   ))}
                 </div>
 
-                <p className="mt-6 text-slate-700">We build with that in mind from day one.</p>
+                <p className="mt-6 text-slate-700">That’s how resilient businesses operate.</p>
 
                 <div className="mt-8 flex gap-3 flex-wrap justify-center">
                   <OrangeButton href="/contact">Talk to Us</OrangeButton>
@@ -731,16 +778,16 @@ export default function WebsitesThatSupportBusinessPage() {
             >
               <div className="max-w">
                 <p className="text-xs font-semibold tracking-[0.22em] uppercase text-white/70">
-                  FINAL CTA — WEBSITES
+                  
                 </p>
 
                 <h2 className="mt-4 text-3xl md:text-4xl font-semibold text-white">
-                  Let’s Make the Website Work for You
+                  Let’s Protect the Business Without Slowing It Down
                 </h2>
 
                 <p className="mt-4 text-white/80 leading-relaxed">
-                  You shouldn’t need extra staff just to manage enquiries.
-                  We’ll help you turn your website into a reliable part of the business system.
+                  You don’t need fear. You need clarity and preparation.
+                  We’ll help you identify real risks — and put the right protection in place.
                 </p>
 
                 <div className="mt-7 flex gap-3 flex-wrap justify-center">
@@ -749,7 +796,7 @@ export default function WebsitesThatSupportBusinessPage() {
                 </div>
 
                 <p className="mt-4 text-sm text-white/70">
-                  Better enquiries start with better structure.
+                  Calm preparation beats reactive damage.
                 </p>
               </div>
             </div>

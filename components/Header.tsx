@@ -20,9 +20,11 @@ const SERVICES = [
   { title: "Business Systems", href: "/services/business-systems" },
   { title: "Custom Software", href: "/services/custom-software" },
   { title: "Websites", href: "/services/websites" },
+  { title: "Cybersecurity, Access & Data Control", href: "/services/cybersecurity-access-data-control" },
   { title: "Digital Marketing", href: "/services/digital-marketing" },
   { title: "System Integration", href: "/services/system-integration" },
   { title: "Support & Training", href: "/services/support" },
+
 ];
 
 export function Header() {
