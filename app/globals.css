@@ -29,7 +29,12 @@ body {
   color: var(--color-text);
   font-family: var(--font-body);
 }
-
+.bg-slate-950{
+  background-color: var(--brand-primary);
+}
+.text-slate-400,.text-slate-300{
+  color:white;
+}
 h1, h2, h3, h4, h5 {
   font-family: var(--font-heading);
 }
@@ -46,12 +51,7 @@ h1, h2, h3, h4, h5 {
 
 }
 .text-brand-gradient {
-  background: linear-gradient(
-    90deg,
-    var(--brand-primary) 0%,
-    var(--brand-accent) 55%,
-    var(--brand-secondary) 120%
-  );
+  background: var(--brand-primary);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;

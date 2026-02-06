@@ -630,7 +630,7 @@ function TierCard({ tier }: { tier: any }) {
       className="rounded-3xl border border-slate-200 bg-white/70 p-8 backdrop-blur shadow-[0_18px_60px_-45px_rgba(0,0,0,.45)]"
     >
       <div className="flex items-start gap-4">
-        <div className="rounded-2xl bg-orange-500/10 p-3 text-orange-600">
+        <div className="rounded-full bg-orange-500/10 p-3 text-orange-600">
           <Icon size={22} />
         </div>
         <div className="min-w-0">

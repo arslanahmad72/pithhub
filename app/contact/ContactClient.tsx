@@ -161,7 +161,7 @@ export default function ContactPage() {
                   className="group rounded-[32px] border border-slate-200 bg-white/70 backdrop-blur
                              shadow-[0_18px_60px_-45px_rgba(0,0,0,.45)] p-7 text-center"
                 >
-                  <div className="mx-auto grid h-14 w-14 place-items-center rounded-2xl border shadow-sm"
+                  <div className="mx-auto grid h-14 w-14 place-items-center rounded-full border shadow-sm"
                     style={{
                       borderColor: "rgba(255,122,0,0.35)",
                       background: "rgba(255,122,0,0.10)",

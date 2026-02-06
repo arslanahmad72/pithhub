@@ -933,7 +933,7 @@ export default function HomeClient() {
 
             {/* Icon */}
             <div
-              className="h-12 w-12 rounded-2xl flex items-center justify-center border"
+              className="h-12 w-12 rounded-full flex items-center justify-center border"
               style={{
                 borderColor: "rgba(255,122,0,0.35)",
                 background: "rgba(255,122,0,0.10)",
