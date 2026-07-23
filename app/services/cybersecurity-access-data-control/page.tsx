@@ -312,7 +312,7 @@ export default function CybersecurityBusinessProtectionPage() {
                 />
                 <div className="relative overflow-hidden rounded-[28px] border border-slate-200 bg-slate-100 shadow-sm">
                   <Image
-                    src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=1600&q=80"
+                    src="/cyber.jpeg"
                     alt="Business protection and operational resilience"
                     width={1600}
                     height={1100}
@@ -325,7 +325,6 @@ export default function CybersecurityBusinessProtectionPage() {
 
             {/* Content */}
             <div className="lg:col-span-6">
-              <OrangePill>PAGE INTRO (ABOVE THE FOLD)</OrangePill>
 
               <h2 className="mt-5 text-4xl md:text-5xl font-semibold tracking-tight leading-[1.05]">
                 Protection That Keeps the Business Running —
@@ -365,9 +364,7 @@ export default function CybersecurityBusinessProtectionPage() {
         <Container>
           <div className="py-14 md:py-20 grid gap-12 lg:grid-cols-12 items-start">
             <div className="lg:col-span-5">
-              <p className="text-xs font-semibold tracking-[0.22em] uppercase text-slate-500">
-                WHAT THIS FEELS LIKE DAY-TO-DAY
-              </p>
+             
 
               <h3 className="mt-4 text-4xl md:text-5xl font-semibold tracking-tight">
                 If this sounds familiar,
@@ -415,7 +412,6 @@ export default function CybersecurityBusinessProtectionPage() {
         <Container>
           <div className="py-14 md:py-20 grid gap-12 lg:grid-cols-12 items-start">
             <div className="lg:col-span-5">
-              <OrangePill>WHAT WE PROTECT</OrangePill>
 
               <h3 className="mt-5 text-4xl md:text-5xl font-semibold tracking-tight">
                 Business-Critical Areas
@@ -439,7 +435,7 @@ export default function CybersecurityBusinessProtectionPage() {
             <div className="lg:col-span-7">
               <div className="relative overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-sm">
                 <Image
-                  src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1600&q=80"
+                  src="/what-we-cyber.jpeg"
                   alt="Protecting systems, data, and continuity"
                   width={1600}
                   height={1100}
@@ -470,7 +466,6 @@ export default function CybersecurityBusinessProtectionPage() {
         <Container>
           <div className="py-14 md:py-20 grid gap-12 lg:grid-cols-12 items-start">
             <div className="lg:col-span-5">
-              <OrangePill>WHAT WE PUT IN PLACE</OrangePill>
 
               <h3 className="mt-5 text-4xl md:text-5xl font-semibold tracking-tight">
                 Practical Protection
@@ -609,7 +604,6 @@ export default function CybersecurityBusinessProtectionPage() {
         <Container>
           <div className="py-14 md:py-20">
             <div className="rounded-[28px] border border-slate-200 bg-white p-8 md:p-10 shadow-sm">
-              <OrangePill>WHAT THIS IS NOT</OrangePill>
 
               <h2 className="mt-4 text-2xl md:text-3xl font-semibold text-slate-900">
                 This Is Not Fear-Based Security
@@ -683,7 +677,6 @@ export default function CybersecurityBusinessProtectionPage() {
         <Container>
           <div className="py-14 md:py-20 grid gap-12 lg:grid-cols-12 items-start">
             <div className="lg:col-span-5">
-              <OrangePill>HOW WE WORK (FOR THIS SERVICE)</OrangePill>
 
               <h3 className="mt-5 text-4xl md:text-5xl font-semibold tracking-tight">
                 Our approach is calm

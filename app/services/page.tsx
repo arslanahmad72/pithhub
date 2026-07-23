@@ -191,15 +191,6 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto px-6 py-12 md:py-16">
           <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] items-start">
             <div>
-              <div className="flex items-center gap-3">
-                <OrangePill>
-                  <span className="inline-flex items-center gap-2">
-                    <Sparkles className="h-4 w-4" />
-                    WHAT WE BUILD
-                  </span>
-                </OrangePill>
-              </div>
-
               <h2 className="mt-5 text-3xl md:text-4xl font-semibold tracking-tight text-slate-900">
                 We don’t sell “tech services”.
                 <br />
@@ -226,9 +217,7 @@ export default function ServicesPage() {
 
             {/* “Not off-the-shelf” card — matches your clean card style */}
             <div className="rounded-[28px] border border-slate-200 bg-slate-50/60 p-7 md:p-8 shadow-sm">
-              <p className="text-xs font-semibold tracking-[0.22em] uppercase text-slate-500">
-                IMPORTANT CONTEXT
-              </p>
+           
               <h3 className="mt-3 text-xl font-semibold text-slate-900">
                 This Is Not Off-the-Shelf Work
               </h3>
@@ -282,9 +271,6 @@ export default function ServicesPage() {
   <div className="max-w-7xl mx-auto px-6 py-16">
     {/* Heading */}
     <div className="text-center">
-      <p className="inline-flex items-center gap-2 rounded-full bg-brand-gradient text-white p-2 text-xs font-semibold tracking-widest uppercase text-brandPrimary">
-        BUILT FOR CONTROL
-      </p>
 
       <h2 className="mt-3 text-4xl md:text-5xl font-semibold tracking-tight text-slate-900">
         Services That Reduce Pressure
@@ -413,10 +399,7 @@ export default function ServicesPage() {
 
   <div className="relative max-w-7xl mx-auto px-6 py-16 md:py-24">
     <div className="mx-auto max-w-4xl text-center">
-      <p className="text-xs md:text-sm font-semibold tracking-[0.28em] uppercase text-white/70">
-        WHAT THIS IS REALLY ABOUT
-      </p>
-
+    
       <h2 className="mt-4 text-4xl md:text-6xl font-semibold tracking-tight text-white">
         This Is About Reducing Pressure on You
       </h2>
@@ -467,7 +450,7 @@ export default function ServicesPage() {
               <div className="relative overflow-hidden rounded-[2.5rem] border border-slate-200 bg-slate-100 shadow-sm">
                 {/* Replace with your /public image anytime */}
                 <Image
-                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80"
+                  src="/final_cta.png"
                   alt="PithHub consultation"
                   width={1600}
                   height={1100}
@@ -479,7 +462,6 @@ export default function ServicesPage() {
 
             {/* Content */}
             <div>
-              <OrangePill>FINAL CTA</OrangePill>
 
               <h2 className="mt-5 text-4xl md:text-5xl font-semibold tracking-tight text-slate-900">
                 If Your Business Feels Heavier Than It Should, Let’s Fix That

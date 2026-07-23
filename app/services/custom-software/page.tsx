@@ -19,7 +19,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Custom Software (Built Around Your Business) | PithHub (Jamaica)",
+  title: "Custom Software <br>(Built Around Your Business) | PithHub (Jamaica)",
   description:
     "Custom Software (Built Around Your Business). We build software that fits your operations — not the other way around — with built-in control, security, and clear visibility.",
   alternates: { canonical: "/services/custom-software" },
@@ -307,7 +307,7 @@ export default function CustomSoftwareServicePage() {
                 />
                 <div className="relative overflow-hidden rounded-[28px] border border-slate-200 bg-slate-100 shadow-sm">
                   <Image
-                    src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1600&q=80"
+                    src="/custom.jpeg"
                     alt="Custom software built around operations"
                     width={1600}
                     height={1100}
@@ -320,7 +320,6 @@ export default function CustomSoftwareServicePage() {
 
             {/* Content */}
             <div className="lg:col-span-6">
-              <OrangePill>ABOVE THE FOLD</OrangePill>
 
               <h2 className="mt-5 text-4xl md:text-5xl font-semibold tracking-tight leading-[1.05]">
                 When Software Forces You to Change How You Work,
@@ -359,10 +358,7 @@ export default function CustomSoftwareServicePage() {
         <Container>
           <div className="py-14 md:py-20 grid gap-12 lg:grid-cols-12 items-start">
             <div className="lg:col-span-5">
-              <p className="text-xs font-semibold tracking-[0.22em] uppercase text-slate-500">
-                DAY-TO-DAY
-              </p>
-
+              
               <h3 className="mt-4 text-4xl md:text-5xl font-semibold tracking-tight">
                 What this feels like
                 <span className="block font-serif italic font-medium text-slate-700">
@@ -383,7 +379,7 @@ export default function CustomSoftwareServicePage() {
             <div className="lg:col-span-7">
               <div className="relative overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-sm">
                 <Image
-                  src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80"
+                  src="/custom.jpeg"
                   alt="Teams working around software"
                   width={1600}
                   height={1100}
@@ -424,7 +420,6 @@ export default function CustomSoftwareServicePage() {
         <Container>
           <div className="py-14 md:py-20 grid gap-12 lg:grid-cols-12 items-start">
             <div className="lg:col-span-5">
-              <OrangePill>WHAT WE BUILD</OrangePill>
 
               <h3 className="mt-5 text-4xl md:text-5xl font-semibold tracking-tight">
                 Software Designed
@@ -490,7 +485,6 @@ export default function CustomSoftwareServicePage() {
         <Container>
           <div className="py-14 md:py-20 grid gap-12 lg:grid-cols-12 items-start">
             <div className="lg:col-span-5">
-              <OrangePill>CONTROL & PROTECTION</OrangePill>
 
               <h3 className="mt-5 text-4xl md:text-5xl font-semibold tracking-tight">
                 Control Without Complexity
@@ -649,7 +643,6 @@ export default function CustomSoftwareServicePage() {
         <Container>
           <div className="py-14 md:py-20 grid gap-12 lg:grid-cols-12 items-start">
             <div className="lg:col-span-5">
-              <OrangePill>HOW WE WORK</OrangePill>
 
               <h3 className="mt-5 text-4xl md:text-5xl font-semibold tracking-tight">
                 We keep things practical
@@ -734,9 +727,7 @@ export default function CustomSoftwareServicePage() {
               }}
             >
               <div className="">
-                <p className="text-xs font-semibold tracking-[0.22em] uppercase text-white/70">
-                  FINAL CTA — CUSTOM SOFTWARE
-                </p>
+               
 
                 <h2 className="mt-4 text-3xl md:text-4xl font-semibold text-white">
                   Let’s Build Software That Actually Fits

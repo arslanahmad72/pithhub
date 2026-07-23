@@ -249,9 +249,7 @@ export default function SolutionsPage() {
       {/* LEFT CONTENT */}
       <div>
         {/* Pill */}
-        <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-1 text-xs font-medium text-slate-600">
-          ⭐ Business-first solutions
-        </div>
+       
 
         <h2 className="mt-6 text-4xl md:text-5xl font-semibold tracking-tight leading-[1.05] text-slate-950">
           You don’t need more software -
@@ -327,9 +325,7 @@ export default function SolutionsPage() {
                 Calm control • clear status • fewer surprises
               </p>
             </div>
-            <span className="rounded-full bg-orange-50 px-3 py-1 text-xs font-medium text-orange-600">
-              Jamaica
-            </span>
+          
           </div>
 
           {/* Cards */}
@@ -494,9 +490,6 @@ export default function SolutionsPage() {
       <div>
         {/* Header */}
         <div>
-          <p className="text-xs font-semibold tracking-[0.22em] uppercase text-slate-500">
-            Solution Areas
-          </p>
           <h2 className="mt-3 text-3xl md:text-4xl font-semibold tracking-tight text-slate-900">
             Pick what matches you
           </h2>
@@ -950,7 +943,7 @@ export default function SolutionsPage() {
     <div className="absolute left-24 top-1/2 -translate-y-1/2">
       <div className="h-44 w-56 rounded-3xl overflow-hidden border border-white/10 bg-white/5 shadow-2xl">
         <img
-          src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80"
+          src="/solution1.png"
           alt="Structure Solution"
           className="h-full w-full object-cover opacity-90"
           loading="lazy"
@@ -961,7 +954,7 @@ export default function SolutionsPage() {
     <div className="absolute right-24 top-1/2 -translate-y-1/2">
       <div className="h-52 w-60 rounded-3xl overflow-hidden border border-white/10 bg-white/5 shadow-2xl">
         <img
-          src="https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=900&q=80"
+          src="/solution2.png"
           alt="Predictability solution"
           className="h-full w-full object-cover opacity-90"
           loading="lazy"
@@ -1080,7 +1073,7 @@ export default function SolutionsPage() {
         <div className="relative overflow-hidden rounded-[2.5rem] border border-slate-200 bg-slate-100 shadow-sm">
           {/* Replace with your own image */}
           <img
-            src="https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1600&q=80"
+            src="/solution3.jpeg"
             alt="Business clarity discussion"
             className="h-[420px] w-full object-cover"
             loading="lazy"

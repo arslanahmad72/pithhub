@@ -303,7 +303,7 @@ export default function WebsitesThatSupportBusinessPage() {
                 />
                 <div className="relative overflow-hidden rounded-[28px] border border-slate-200 bg-slate-100 shadow-sm">
                   <Image
-                    src="https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1600&q=80"
+                    src="/websites.png"
                     alt="Websites that support sales, follow-up, and operations"
                     width={1600}
                     height={1100}
@@ -316,7 +316,6 @@ export default function WebsitesThatSupportBusinessPage() {
 
             {/* Content */}
             <div className="lg:col-span-6">
-              <OrangePill>ABOVE THE FOLD</OrangePill>
 
               <h2 className="mt-5 text-4xl md:text-5xl font-semibold tracking-tight leading-[1.05]">
                 A Website Should Reduce Work —
@@ -355,9 +354,7 @@ export default function WebsitesThatSupportBusinessPage() {
         <Container>
           <div className="py-14 md:py-20 grid gap-12 lg:grid-cols-12 items-start">
             <div className="lg:col-span-5">
-              <p className="text-xs font-semibold tracking-[0.22em] uppercase text-slate-500">
-                DAY-TO-DAY
-              </p>
+             
 
               <h3 className="mt-4 text-4xl md:text-5xl font-semibold tracking-tight">
                 If this sounds familiar,
@@ -407,7 +404,6 @@ export default function WebsitesThatSupportBusinessPage() {
         <Container>
           <div className="py-14 md:py-20 grid gap-12 lg:grid-cols-12 items-start">
             <div className="lg:col-span-5">
-              <OrangePill>WHAT WE BUILD</OrangePill>
 
               <h3 className="mt-5 text-4xl md:text-5xl font-semibold tracking-tight">
                 Websites Designed
@@ -433,7 +429,7 @@ export default function WebsitesThatSupportBusinessPage() {
             <div className="lg:col-span-7">
               <div className="relative overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-sm">
                 <Image
-                  src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1600&q=80"
+                  src="/what-we.jpeg"
                   alt="Website messaging, forms, and workflow integration"
                   width={1600}
                   height={1100}
@@ -470,7 +466,6 @@ export default function WebsitesThatSupportBusinessPage() {
         <Container>
           <div className="py-14 md:py-20 grid gap-12 lg:grid-cols-12 items-start">
             <div className="lg:col-span-5">
-              <OrangePill>CONTROL & PROTECTION</OrangePill>
 
               <h3 className="mt-5 text-4xl md:text-5xl font-semibold tracking-tight">
                 Secure by Design
@@ -645,7 +640,6 @@ export default function WebsitesThatSupportBusinessPage() {
         <Container>
           <div className="py-14 md:py-20 grid gap-12 lg:grid-cols-12 items-start">
             <div className="lg:col-span-5">
-              <OrangePill>HOW WE WORK</OrangePill>
 
               <h3 className="mt-5 text-4xl md:text-5xl font-semibold tracking-tight">
                 Our approach is simple
@@ -730,10 +724,7 @@ export default function WebsitesThatSupportBusinessPage() {
               }}
             >
               <div className="max-w">
-                <p className="text-xs font-semibold tracking-[0.22em] uppercase text-white/70">
-                  FINAL CTA — WEBSITES
-                </p>
-
+        
                 <h2 className="mt-4 text-3xl md:text-4xl font-semibold text-white">
                   Let’s Make the Website Work for You
                 </h2>
