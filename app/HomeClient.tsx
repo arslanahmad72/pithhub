@@ -419,12 +419,7 @@ export default function HomeClient() {
       {/* Top row: heading + stats */}
       <div className="grid lg:grid-cols-1 text-center gap-10 items-start">
         <div>
-          <motion.p
-            variants={fadeUp}
-            className="inline-flex items-center gap-2 rounded-full bg-brand-gradient text-white p-2 text-xs font-semibold tracking-widest uppercase text-brandPrimary"
-          >
-            IMMEDIATE RECOGNITION
-          </motion.p>
+          
 
           <motion.h2
             variants={fadeUp}
