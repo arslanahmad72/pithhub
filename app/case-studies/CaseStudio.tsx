@@ -227,10 +227,9 @@ export default function CaseStudiesClient() {
               {/* ✅ changed to h2 (not h1) */}
               <h2 className="text-4xl font-semibold leading-tight md:text-5xl">
                 Real Business Problems.
-                <br />
-                <span className="text-brand-gradient">
+                <p className="text-brand-gradient">
                   Clear Systems. Measurable Relief.
-                </span>
+                </p>
               </h2>
 
               <p className="mt-6 text-lg text-slate-600">
