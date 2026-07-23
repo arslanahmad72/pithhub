@@ -545,12 +545,6 @@ export default function HomeClient() {
         whileInView="show"
         viewport={{ once: true, amount: 0.25 }}
       >
-        <motion.p
-          variants={fadeUp}
-          className="inline-flex items-center gap-2 rounded-full text-white p-2 bg-brand-gradient text-xs font-semibold tracking-widest uppercase text-brandPrimary"
-        >
-          Core positioning
-        </motion.p>
 
         <motion.h2
           variants={fadeUp}
@@ -574,7 +568,7 @@ export default function HomeClient() {
         <motion.div variants={fadeUp} className="mt-8">
           <div className="relative overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-[0_30px_90px_-60px_rgba(0,0,0,.6)]">
             <Image
-              src="https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1600&q=80"
+              src="/image_2.jpeg"
               alt="Business discussion"
               width={1600}
               height={900}
@@ -682,12 +676,7 @@ export default function HomeClient() {
       >
         {/* CENTERED HEADER */}
         <div className="text-center max-w-3xl mx-auto">
-          <motion.p
-            variants={fadeUp}
-            className="text-white/80 text-xs font-semibold tracking-widest uppercase"
-          >
-            What That Looks Like in Real Life
-          </motion.p>
+
 
           <motion.h2
             variants={fadeUp}
@@ -851,12 +840,7 @@ export default function HomeClient() {
         <div className="mx-auto px-6 py-16">
     {/* Heading */}
     <div className="text-center">
-    <motion.p
-            variants={fadeUp}
-            className="inline-flex items-center gap-2 rounded-full bg-brand-gradient text-white p-2 text-xs font-semibold tracking-widest uppercase text-brandPrimary"
-          >
-            IMMEDIATE RECOGNITION
-          </motion.p>
+  
 
       <h2 className="mt-3 text-4xl md:text-5xl font-semibold tracking-tight text-slate-900">
       Problem → Relief
@@ -967,7 +951,7 @@ export default function HomeClient() {
       <div className="relative">
         <div className="overflow-hidden rounded-3xl shadow-[0_30px_80px_-40px_rgba(0,0,0,.45)]">
           <img
-            src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80"
+            src="/image_3.png"
             alt="Business team discussion"
             className="w-full h-full object-cover"
           />
@@ -976,9 +960,7 @@ export default function HomeClient() {
 
       {/* CONTENT */}
       <div>
-        <p className="text-sm font-semibold  uppercase tracking-widest text-brandPrimary">
-          👥 Who This Is For
-        </p>
+  
 
         <h2 className="mt-3 text-4xl md:text-5xl font-semibold tracking-tight leading-tight">
           Built for Real Businesses{" "}
@@ -1183,13 +1165,7 @@ export default function HomeClient() {
       viewport={{ once: true, amount: 0.25 }}
       className="text-center"
     >
-      {/* Pill */}
-      <motion.span
-        variants={fadeUp}
-        className="inline-flex items-center rounded-full border border-slate-200 bg-white/70 backdrop-blur px-4 py-1 text-xs font-semibold"
-      >
-        Trust
-      </motion.span>
+    
 
       <motion.h2
         variants={fadeUp}
