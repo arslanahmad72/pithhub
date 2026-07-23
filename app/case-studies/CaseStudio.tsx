@@ -271,12 +271,6 @@ export default function CaseStudiesClient() {
             variants={stagger}
             className="mx-auto max-w-3xl text-center"
           >
-            <motion.div
-              variants={fadeUp}
-              className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/70 px-4 py-2 text-xs font-semibold tracking-wide text-orange-600 backdrop-blur"
-            >
-               
-
             <motion.h2 variants={fadeUp} className="mt-4 text-3xl font-semibold">
               Focus on the Problem, Not the Technology
             </motion.h2>
