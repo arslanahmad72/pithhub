@@ -941,7 +941,7 @@ export default function SolutionsPage() {
   {/* Optional side images (remove this whole block if you don't want images) */}
   <div className="pointer-events-none absolute inset-0 hidden lg:block">
     <div className="absolute left-24 top-1/2 -translate-y-1/2">
-      <div className="h-44 w-56 rounded-3xl overflow-hidden border border-white/10 bg-white/5 shadow-2xl">
+      <div className="h-52 w-80 rounded-3xl overflow-hidden border border-white/10 bg-white/5 shadow-2xl">
         <img
           src="/solution1.png"
           alt="Structure Solution"
@@ -952,7 +952,7 @@ export default function SolutionsPage() {
     </div>
 
     <div className="absolute right-24 top-1/2 -translate-y-1/2">
-      <div className="h-52 w-60 rounded-3xl overflow-hidden border border-white/10 bg-white/5 shadow-2xl">
+      <div className="h-52 w-80 rounded-3xl overflow-hidden border border-white/10 bg-white/5 shadow-2xl">
         <img
           src="/solution2.png"
           alt="Predictability solution"
