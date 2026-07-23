@@ -316,7 +316,7 @@ export default function SupportTrainingContinuousImprovementPage() {
                 />
                 <div className="relative overflow-hidden rounded-[28px] border border-slate-200 bg-slate-100 shadow-sm">
                   <Image
-                    src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1600&q=80"
+                    src="/support.jpeg"
                     alt="Support and training"
                     width={1600}
                     height={1100}
@@ -329,7 +329,6 @@ export default function SupportTrainingContinuousImprovementPage() {
 
             {/* Content */}
             <div className="lg:col-span-6">
-              <OrangePill>SERVICE</OrangePill>
 
               <h2 className="mt-5 text-4xl md:text-5xl font-semibold tracking-tight leading-[1.05]">
                 Support, Training{" "}
@@ -338,9 +337,7 @@ export default function SupportTrainingContinuousImprovementPage() {
                 </span>
               </h2>
 
-              <p className="mt-6 text-sm font-semibold text-slate-900">
-                PAGE INTRO (ABOVE THE FOLD)
-              </p>
+               
               <p className="mt-2 text-slate-600 font-semibold">{introTitle}</p>
 
               <div className="mt-4 space-y-2 text-slate-600 leading-relaxed">
@@ -364,9 +361,7 @@ export default function SupportTrainingContinuousImprovementPage() {
           <div className="py-14 md:py-20 grid gap-12 lg:grid-cols-12 items-start">
             {/* Left */}
             <div className="lg:col-span-5">
-              <p className="text-xs font-semibold tracking-[0.22em] uppercase text-slate-500">
-                OUR PROCESS
-              </p>
+               
 
               <h3 className="mt-4 text-4xl md:text-5xl font-semibold tracking-tight">
                 Support That Keeps
@@ -424,7 +419,7 @@ export default function SupportTrainingContinuousImprovementPage() {
               {/* Big image to remove “empty space” */}
               <div className="relative overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-sm">
                 <Image
-                  src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1600&q=80"
+                  src="/support_process.jpeg"
                   alt="Ongoing support and improvement"
                   width={1600}
                   height={1100}
@@ -575,7 +570,7 @@ export default function SupportTrainingContinuousImprovementPage() {
 
                 <div className="lg:col-span-5 relative overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
                   <Image
-                    src="https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1600&q=80"
+                    src="/support_2.jpeg"
                     alt="Stability and support"
                     width={1600}
                     height={1100}
@@ -609,9 +604,7 @@ export default function SupportTrainingContinuousImprovementPage() {
               }}
             >
               <div className="p-8 md:p-12">
-                <p className="text-xs font-semibold tracking-[0.22em] uppercase text-white/70">
-                  FINAL CTA — SUPPORT PAGE
-                </p>
+                 
 
                 <h2 className="mt-4 text-3xl md:text-5xl font-semibold tracking-tight text-white">
                   Let’s Keep the Systems Working

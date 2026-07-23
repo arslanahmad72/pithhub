@@ -151,13 +151,7 @@ export default function PricingPage() {
 
         <div className="relative max-w-7xl mx-auto px-6 pt-20 pb-24 text-center">
           <motion.div initial="hidden" animate="show" variants={stagger}>
-            <motion.div
-              variants={fadeUp}
-              className="mx-auto inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/70 px-4 py-2 text-xs font-semibold tracking-wide text-orange-600 backdrop-blur"
-            >
-              <BadgeDollarSign size={14} />
-              PRICING
-            </motion.div>
+          
 
             <motion.h1
               variants={fadeUp}
@@ -254,7 +248,7 @@ export default function PricingPage() {
               <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-[0_18px_60px_-45px_rgba(0,0,0,.45)]">
                 <div className="relative aspect-[4/3] w-full">
                   <Image
-                    src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80"
+                    src="/pricing_img.jpeg"
                     alt="Pricing clarity and planning"
                     fill
                     className="object-cover"
@@ -265,13 +259,7 @@ export default function PricingPage() {
             </motion.div>
 
             <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={stagger}>
-              <motion.div
-                variants={fadeUp}
-                className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/70 px-4 py-2 text-xs font-semibold tracking-wide text-orange-600 backdrop-blur"
-              >
-                <ShieldCheck size={14} />
-                IMPORTANT CONTEXT
-              </motion.div>
+             
 
               <motion.h2 variants={fadeUp} className="mt-4 text-3xl font-semibold text-slate-900">
                 Why We Don’t Offer Flat Prices
@@ -348,7 +336,7 @@ export default function PricingPage() {
               <div className="relative overflow-hidden rounded-3xl border border-slate-200 shadow-[0_18px_60px_-45px_rgba(0,0,0,.45)]">
                 <div className="relative aspect-[4/3] w-full">
                   <Image
-                    src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80"
+                    src="/pricing_img2.jpeg"
                     alt="Planning and pricing clarity"
                     fill
                     className="object-cover"
@@ -358,10 +346,7 @@ export default function PricingPage() {
             </div>
 
             <div className="max-w-xl">
-              <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-xs font-semibold tracking-wide text-orange-600">
-                <SlidersHorizontal size={14} />
-                WHAT AFFECTS PRICING
-              </div>
+              
 
               <h2 className="mt-5 text-4xl font-semibold leading-tight text-slate-900 md:text-5xl">
                 Key Factors That Influence <span className="italic">Cost</span>
@@ -431,14 +416,7 @@ export default function PricingPage() {
             variants={stagger}
             className="mx-auto max-w-5xl"
           >
-            <motion.div
-              variants={fadeUp}
-              className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/70 px-4 py-2 text-xs font-semibold tracking-wide text-orange-600 backdrop-blur"
-            >
-              <Sparkles size={14} />
-              WHAT YOU’RE PAYING FOR
-            </motion.div>
-
+        
             <motion.h2 variants={fadeUp} className="mt-4 text-3xl font-semibold text-slate-900">
               Beyond the System Itself
             </motion.h2>
@@ -526,8 +504,7 @@ export default function PricingPage() {
         variants={fadeUp}
         className="text-xs font-semibold tracking-widest uppercase text-orange-600"
       >
-        A NOTE ON VALUE (THIS SPEAKS
-DIRECTLY TO OWNERS)
+
       </motion.p>
 
       {/* heading */}
@@ -539,7 +516,7 @@ DIRECTLY TO OWNERS)
       </motion.h2>
 
       {/* intro */}
-      <motion.p variants={fadeUp} className="mt-4 text-slate-600 max-w-3xl">
+      <motion.p variants={fadeUp} className="mt-4 text-slate-600">
         Strong systems don’t just save money. They save energy, time, and
         mental space.
       </motion.p>
@@ -589,7 +566,7 @@ DIRECTLY TO OWNERS)
             className="mx-auto max-w-3xl text-center"
           >
             <h2 className="text-3xl font-semibold text-slate-900 md:text-4xl">
-              The Right Question Isn’t “How Much Does It Cost?”
+              The Right Question Isn’t </br>“How Much Does It Cost?”
             </h2>
 
             <p className="mt-6 text-slate-600">

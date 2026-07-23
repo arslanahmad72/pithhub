@@ -195,9 +195,7 @@ export default function AboutPage() {
               viewport={{ once: true, amount: 0.25 }}
               className="text-left"
             >
-              <motion.div variants={fadeUp}>
-                <Eyebrow>Why we exist</Eyebrow>
-              </motion.div>
+             
 
               <motion.h2 variants={fadeUp} className="mt-4 text-3xl md:text-4xl font-semibold tracking-tight">
                 Why This Company Was Built
@@ -237,7 +235,7 @@ export default function AboutPage() {
             >
               <div className="rounded-3xl overflow-hidden border border-slate-200 bg-white/70 backdrop-blur shadow-[0_20px_70px_-55px_rgba(0,0,0,.45)]">
                 <Image
-                  src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80"
+                  src="/about.jpeg"
                   alt="Business systems discussion"
                   width={1600}
                   height={900}
@@ -264,9 +262,7 @@ export default function AboutPage() {
             viewport={{ once: true, amount: 0.25 }}
             className="text-center"
           >
-            <motion.div variants={fadeUp}>
-              <Eyebrow>Our point of view</Eyebrow>
-            </motion.div>
+            
 
             <motion.h2 variants={fadeUp} className="mt-4 text-3xl md:text-4xl font-semibold tracking-tight">
               We Believe Strong Businesses Are Built on Systems, Not Effort
@@ -321,9 +317,7 @@ export default function AboutPage() {
               viewport={{ once: true, amount: 0.25 }}
               className="text-left"
             >
-              <motion.div variants={fadeUp}>
-                <Eyebrow>How we think</Eyebrow>
-              </motion.div>
+               
 
               <motion.h2 variants={fadeUp} className="mt-4 text-3xl md:text-4xl font-semibold tracking-tight">
                 We Do Not Start With Software
@@ -403,9 +397,7 @@ export default function AboutPage() {
         <Container>
           <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.25 }}>
             <div className="text-center">
-              <motion.div variants={fadeUp}>
-                <Eyebrow>Who we work with</Eyebrow>
-              </motion.div>
+              
 
               <motion.h2 variants={fadeUp} className="mt-4 text-3xl md:text-4xl font-semibold tracking-tight">
                 The Businesses That Fit Best
@@ -453,9 +445,7 @@ export default function AboutPage() {
         <Container>
           <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.25 }}>
             <div className="text-center">
-              <motion.div variants={fadeUp}>
-                <Eyebrow>Partnership</Eyebrow>
-              </motion.div>
+               
 
               <motion.h2 variants={fadeUp} className="mt-4 text-3xl md:text-4xl font-semibold tracking-tight">
                 This Is Not a Transactional Relationship
@@ -506,9 +496,7 @@ export default function AboutPage() {
         <Container>
           <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.25 }}>
             <div className="text-center">
-              <motion.div variants={fadeUp}>
-                <Eyebrow>Values</Eyebrow>
-              </motion.div>
+              
 
               <motion.h2 variants={fadeUp} className="mt-4 text-3xl md:text-4xl font-semibold tracking-tight">
                 What Guides Our Work
@@ -546,9 +534,7 @@ export default function AboutPage() {
               viewport={{ once: true, amount: 0.25 }}
               className="text-left"
             >
-              <motion.div variants={fadeUp}>
-                <Eyebrow>Experience & context</Eyebrow>
-              </motion.div>
+               
 
               <motion.h2 variants={fadeUp} className="mt-4 text-3xl md:text-4xl font-semibold tracking-tight">
                 We Understand the Jamaican Business Reality
@@ -580,7 +566,7 @@ export default function AboutPage() {
             >
               <div className="rounded-3xl overflow-hidden border border-slate-200 bg-white shadow-[0_20px_70px_-55px_rgba(0,0,0,.45)]">
                 <Image
-                  src="https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1600&q=80"
+                  src="/about_2.jpeg"
                   alt="Operations planning"
                   width={1600}
                   height={900}
@@ -612,7 +598,7 @@ export default function AboutPage() {
               {/* Image side */}
               <motion.div variants={fadeUp} className="relative min-h-[260px] lg:min-h-[420px]">
                 <Image
-                  src="https://images.unsplash.com/photo-1523958203904-cdcb402031fd?auto=format&fit=crop&w=1600&q=80"
+                  src="/start_here.jpeg"
                   alt="Calm business operations"
                   fill
                   priority={false}
@@ -624,9 +610,7 @@ export default function AboutPage() {
 
               {/* Text side */}
               <motion.div variants={fadeUp} className="p-10 md:p-12 text-left">
-                <div className="inline-flex">
-                  <Eyebrow>Start here</Eyebrow>
-                </div>
+                 
 
                 <h2 className="mt-4 text-3xl md:text-4xl font-semibold tracking-tight text-slate-950">
                   If This Way of Thinking Resonates, Lets Talk

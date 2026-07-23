@@ -207,7 +207,7 @@ export default function CaseStudiesClient() {
               <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-white/60 shadow-[0_18px_60px_-45px_rgba(0,0,0,.45)] backdrop-blur">
                 <div className="relative aspect-[4/3] w-full">
                   <Image
-                    src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80"
+                    src="/case_study.png"
                     alt="Real business problems solved with clear systems"
                     fill
                     className="object-cover"
@@ -276,9 +276,7 @@ export default function CaseStudiesClient() {
               variants={fadeUp}
               className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/70 px-4 py-2 text-xs font-semibold tracking-wide text-orange-600 backdrop-blur"
             >
-              <ClipboardList size={14} />
-              HOW TO READ THESE CASES
-            </motion.div>
+               
 
             <motion.h2 variants={fadeUp} className="mt-4 text-3xl font-semibold">
               Focus on the Problem, Not the Technology
@@ -327,7 +325,6 @@ export default function CaseStudiesClient() {
               className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/70 px-4 py-2 text-xs font-semibold tracking-wide text-orange-600 backdrop-blur"
             >
               <ClipboardList size={14} />
-              What all these projects have in common
             </motion.div>
 
             <motion.h2 variants={fadeUp} className="text-3xl font-semibold">
@@ -379,9 +376,7 @@ export default function CaseStudiesClient() {
 
   <Container>
     <div className="relative mx-auto max-w-3xl text-center">
-      <p className="text-xs font-semibold tracking-widest uppercase text-slate-400">
-        Important Note on Confidentiality
-      </p>
+      
 
       <h2 className="mt-4 text-3xl md:text-4xl font-semibold tracking-tight text-white">
         Discretion Is Part of the System

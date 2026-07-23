@@ -70,20 +70,13 @@ export default function IndustriesPage() {
       {/* LEFT */}
       <div className="pt-2">
         {/* top pill */}
-        <div className="inline-flex items-center gap-2 rounded-full border border-orange-200 bg-orange-50 px-4 py-2 text-xs font-semibold tracking-wide text-slate-900">
-          <span className="inline-flex h-5 w-5 items-center justify-center rounded-full border border-orange-200 bg-white">
-            ✦
-          </span>
-          INDUSTRIES
-        </div>
-
-        <h1 className="mt-6 text-4xl md:text-4xl font-semibold tracking-tight leading-[1.05] text-slate-950">
+        <h2 className="mt-6 text-4xl md:text-4xl font-semibold tracking-tight leading-[1.05] text-slate-950">
           Different Industries.
           <br />
           Same Pressure.
           <br />
           Same Need for Better Systems.
-        </h1>
+        </h2>
 
         <p className="mt-6 text-base md:text-lg text-slate-700 leading-relaxed max-w-xl">
           No two businesses operate exactly the same — but the challenges business owners
@@ -133,17 +126,11 @@ export default function IndustriesPage() {
 
       {/* RIGHT (IMPORTANT CONTEXT) */}
       <div className="rounded-[34px] border border-slate-200 bg-white shadow-[0_20px_60px_-40px_rgba(15,23,42,.22)] p-7 md:p-8">
-        <p className="text-xs font-semibold tracking-[0.32em] uppercase text-slate-500">
-          IMPORTANT CONTEXT
-        </p>
+        
 
         <h3 className="mt-4 text-2xl md:text-3xl font-semibold tracking-tight text-slate-950">
           We Don’t Force Your Business Into a Template
         </h3>
-
-        <p className="mt-3 text-slate-600">
-          This page is designed to make each business owner think:
-        </p>
 
         {/* quote card */}
         <div className="mt-5 rounded-3xl border border-slate-200 bg-slate-50 p-6">
@@ -211,9 +198,7 @@ export default function IndustriesPage() {
             transition={{ duration: 0.55, ease: "easeOut" }}
             className="mx-auto max-w-3xl text-center"
           >
-             <p className="inline-flex items-center gap-2 rounded-full bg-brand-gradient text-white p-2 text-xs font-semibold tracking-widest uppercase text-brandPrimary">
-             HOW TO USE THIS PAGE
-      </p>
+             
             <h2 className="text-3xl font-semibold">
               If Your Industry Is Listed Below, Read It Carefully
             </h2>

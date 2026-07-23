@@ -284,7 +284,7 @@ export default function SystemIntegrationAutomationPage() {
                 />
                 <div className="relative overflow-hidden rounded-[28px] border border-slate-200 bg-slate-100 shadow-sm">
                   <Image
-                    src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=80"
+                    src="/system.jpeg"
                     alt="System visibility and reporting"
                     width={1600}
                     height={1100}
@@ -297,7 +297,6 @@ export default function SystemIntegrationAutomationPage() {
 
             {/* Content */}
             <div className="lg:col-span-6">
-              <OrangePill>PAGE INTRO</OrangePill>
 
               <h2 className="mt-5 text-4xl md:text-5xl font-semibold tracking-tight leading-[1.05]">
                 When Everything Works —{" "}
@@ -332,9 +331,7 @@ export default function SystemIntegrationAutomationPage() {
         <Container>
           <div className="py-14 md:py-20 grid gap-12 lg:grid-cols-12 items-start">
             <div className="lg:col-span-5">
-              <p className="text-xs font-semibold tracking-[0.22em] uppercase text-slate-500">
-                WHAT THIS FEELS LIKE DAY-TO-DAY
-              </p>
+             
 
               <h3 className="mt-4 text-4xl md:text-5xl font-semibold tracking-tight">
                 If this sounds familiar,
@@ -426,7 +423,6 @@ export default function SystemIntegrationAutomationPage() {
           <div className="py-14 md:py-20 grid gap-12 lg:grid-cols-12 items-start">
             {/* Left */}
             <div className="lg:col-span-6">
-              <OrangePill>WHAT WE FIX</OrangePill>
 
               <h3 className="mt-5 text-5xl md:text-6xl font-semibold tracking-tight leading-[1.02]">
                 We Connect Systems So{" "}
@@ -452,7 +448,7 @@ export default function SystemIntegrationAutomationPage() {
               <div className="mt-8 hidden lg:block">
                 <div className="relative overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-sm">
                   <Image
-                    src="https://images.unsplash.com/photo-1526378722445-1c4a424f6b1f?auto=format&fit=crop&w=1600&q=80"
+                    src="/system_1.jpeg"
                     alt="Connected systems"
                     width={1600}
                     height={1100}
@@ -565,7 +561,6 @@ export default function SystemIntegrationAutomationPage() {
         <Container>
           <div className="py-14 md:py-20 grid gap-12 lg:grid-cols-12 items-start">
             <div className="lg:col-span-5">
-              <OrangePill>BUILT-IN CONTROL & PROTECTION</OrangePill>
 
               <h3 className="mt-5 text-4xl md:text-5xl font-semibold tracking-tight">
                 Visibility Without Risk
@@ -701,7 +696,6 @@ export default function SystemIntegrationAutomationPage() {
         <Container>
           <div className="py-14 md:py-20 grid gap-12 lg:grid-cols-12 items-start">
             <div className="lg:col-span-5">
-              <OrangePill>HOW WE WORK</OrangePill>
 
               <h3 className="mt-5 text-4xl md:text-5xl font-semibold tracking-tight">
                 We integrate carefully
@@ -788,9 +782,7 @@ export default function SystemIntegrationAutomationPage() {
                 `,
               }}
             >
-              <p className="text-xs font-semibold tracking-[0.22em] uppercase text-white/70">
-                FINAL CTA — SYSTEM INTEGRATION PAGE
-              </p>
+              
 
               <h2 className="mt-4 text-3xl md:text-4xl font-semibold text-white">
                 Let’s Create One Clear View of the Business

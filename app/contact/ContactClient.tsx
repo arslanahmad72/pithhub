@@ -60,7 +60,7 @@ export default function ContactPage() {
   const [errorMsg, setErrorMsg] = useState("");
 
   const [form, setForm] = useState({
-    fullName: "",
+    firstName: "",
     company: "",
     phone: "",
     email: "",
@@ -70,7 +70,7 @@ export default function ContactPage() {
 
   const canSubmit = useMemo(() => {
     return (
-      form.fullName.trim() &&
+      form.firstName.trim() &&
       form.company.trim() &&
       form.phone.trim() &&
       form.email.trim() &&
@@ -228,14 +228,7 @@ export default function ContactPage() {
           >
             {/* ✅ Center heading block like your screenshot */}
             <div className="text-center">
-              <motion.div
-                variants={fadeUp}
-                className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-xs font-semibold tracking-wide text-orange-600"
-              >
-                <ShieldCheck size={14} />
-                REASSURANCE
-              </motion.div>
-
+      
               <motion.h2
                 variants={fadeUp}
                 className="mt-5 text-3xl font-semibold text-slate-900"
@@ -321,10 +314,17 @@ export default function ContactPage() {
               <div className="lg:col-span-3 rounded-3xl border border-slate-200 bg-white/70 p-8 backdrop-blur shadow-[0_18px_60px_-45px_rgba(0,0,0,.45)]">
                 <form onSubmit={onSubmit} className="space-y-5">
                   <Field
-                    label="Full Name"
-                    value={form.fullName}
-                    onChange={(v) => onChange("fullName", v)}
-                    placeholder="Your name"
+                    label="First Name"
+                    value={form.firstName}
+                    onChange={(v) => onChange("firstName", v)}
+                    placeholder="First name"
+                    required
+                  />
+                   <Field
+                    label="Last Name"
+                    value={form.lastName}
+                    onChange={(v) => onChange("lastName", v)}
+                    placeholder="Last name"
                     required
                   />
                   <Field
@@ -536,13 +536,6 @@ export default function ContactPage() {
             variants={stagger}
             className="mx-auto max-w-5xl text-center"
           >
-             <motion.div
-                variants={fadeUp}
-                className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white mb-3 px-4 py-2 text-xs font-semibold tracking-wide text-orange-600"
-              >
-                <ShieldCheck size={14} />
-                REASSURANCE
-              </motion.div>
             <motion.h2
               variants={fadeUp}
               className="text-3xl font-semibold text-slate-900"
