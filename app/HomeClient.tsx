@@ -521,7 +521,7 @@ export default function HomeClient() {
             >
               <div className="rounded-3xl overflow-hidden border border-slate-200 bg-white shadow-[0_20px_70px_-45px_rgba(0,0,0,.45)]">
                 <Image
-                  src="/home_image.png/&fit=crop&w=1600&q=80"
+                  src="/home_image.png"
                   alt="Placeholder"
                   width={1600}
                   height={900}
