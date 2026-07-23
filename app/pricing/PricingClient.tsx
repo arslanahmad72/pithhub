@@ -566,9 +566,11 @@ export default function PricingPage() {
             className="mx-auto max-w-3xl text-center"
           >
             <h2 className="text-3xl font-semibold text-slate-900 md:text-4xl">
-              The Right Question Isn’t </br>“How Much Does It Cost?”
+              The Right Question Isn’t
             </h2>
-
+            <h2 className="text-3xl font-semibold text-slate-900 md:text-4xl">
+               “How Much Does It Cost?”
+            </h2>
             <p className="mt-6 text-slate-600">
               The real question is:
               <br />
