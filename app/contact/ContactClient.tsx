@@ -61,6 +61,7 @@ export default function ContactPage() {
 
   const [form, setForm] = useState({
     firstName: "",
+    lastName: "",
     company: "",
     phone: "",
     email: "",
@@ -71,6 +72,7 @@ export default function ContactPage() {
   const canSubmit = useMemo(() => {
     return (
       form.firstName.trim() &&
+      form.lastName.trim() &&
       form.company.trim() &&
       form.phone.trim() &&
       form.email.trim() &&
