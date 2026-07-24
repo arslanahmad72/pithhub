@@ -271,14 +271,7 @@ export default function HomeClient() {
     <div className="py-12 md:py-16 grid lg:grid-cols-2 gap-10 items-center">
       {/* LEFT COPY */}
       <motion.div variants={stagger} initial="hidden" animate="show">
-        <motion.div
-          variants={fadeUp}
-          className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/70 backdrop-blur px-3 py-1 text-xs text-slate-600"
-        >
-          <span className="h-2 w-2 rounded-full bg-brand-gradient" />
-          Jamaica • PithHub & Digital Solutions
-        </motion.div>
-
+    
         <motion.h1
           variants={fadeUp}
           className="mt-5 text-4xl md:text-5xl font-semibold leading-[1.05] tracking-tight"
